@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anh Le | Portfolio Homepage</title>
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    #header {
+        background-image: url(img/abstract.jpg);
+        background-position: 70%;
+        background-size: cover;
+        text-align: center;
+        padding-top: 280px;
+        padding-bottom: 20px;
+    }
+    h1 {
+        /* padding-left: 50px; */
+        margin: auto;
+        font-size: 10em;
+        color: #d8e9f2;
+        /* font-family: system-ui; */
+        font-family: Tahoma;
+        font-weight: bold;
+    }
+    #description {
+        color: white;
+        font-family: Google Sans Code;
+        font-size: 1.25em;
+        padding-top: 10px;
+    }
+    .marquee-container {
+        width: 100%; 
+        overflow: hidden; 
+        white-space: nowrap; 
+    }
+    @keyframes scrollText {
+    0% {
+        transform: translateX(30%); 
+    }
+    100% {
+        transform: translateX(-130%);
+    }
+    }
+    #welcome {
+        font-family: Google Sans Code;
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 180px;
+        display: inline-block;
+        animation: scrollText 15s linear infinite;
+    }
+    .veil {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-image: linear-gradient(to bottom, rgba(1, 1, 1, 0.7) 10%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)); /* Semi-transparent black */
+    }
+    body {
+        margin: 0px;
+    }
+    #main-buttons {
+        display: flex;
+        gap: 120px;
+        color: white;
+        font-family: Google Sans Code;
+        font-size: 1.25em;
+        position: absolute;
+        top: 50px;
+        right: 150px;
+        height: 50%;
+    }
+    .headings {
+        font-family: Tahoma;
+        font-weight: bold;
+        margin-bottom: 40px;
+        font-size: 2.25em;
+        color: #d8e9f2;
+    }
+    #headshot {
+        width: 500px;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    }
+    #introduction {
+        font-family: Google Sans Code;
+        color: white;
+    }
+    #about-me {
+        display: flex;
+        align-items: center;
+        width: 1100px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+        gap: 50px;
+    }
+    #resume-button {
+        font-family: Google Sans Code;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        margin-top: 20px;
+        width: 150px;
+        text-align: center;
+    }
+    #content {
+        background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
+    }
+    #contact-info {
+        width: 1100px;
+        margin: auto;
+    }
+    #form {
+        margin-left: 200px;
+    }
+    #footer {
+        background-color: black;
+        padding: 20px;
+        margin-top: 30px;
+        font-family: Google Sans Code;
+        color: white;
+        text-align: center;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <div id="content">
+        <div>
+            <div id="header">
+                <h1>Anh Le</h1>
+                <p id="description">A Business Intelligence & Analytics Enthusiast</p>
+                <div id="marquee-container">
+                    <p id="welcome">Welcome to my portfolio website. I'm glad to have you here.</p>
+                </div>
+            </div>
+            <div class="veil"></div>
+            <div id="main-buttons">
+                <p><a href="https://github.com/anh-h-le/anh-h-le.github.io"><strong>Home</strong></a></p>
+                <p><strong>Projects</strong></p>
+            </div>
+        </div>
+        <div id="about-me">
+            <div>
+                <h2 class="headings">About Me</h2>
+                <div id="introduction">
+                    <p>I'm a junior majoring in Business Administration at the University of Southern California with a minor in Applied Analytics.</p>
+                    <p>I bring skills of data management, visualization, and analytics with familiarity with Python, Power BI, Tableau, Gurobi Optimizer, and Microsoft Excel.</p>
+                    <p>I'm excited for opportunities to connect, collaborate, and share my works.</p>
+                </div>
+                <p id="resume-button">View my resume</p>
+            </div>
+            <img id="headshot" src="img/headshot.jpg" alt="My Headshot">
+        </div>
+
+        <div id="contact-info">
+            <div>
+                <h2 class="headings">Let's Connect!</h2>
+            </div>
+            <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSdS5bHNlNqhZxiODSpk8iguamciISO3SsPemPR_tzvNdzYR5Q/viewform?embedded=true" width="700" height="500" frameborder="0">Loading…</iframe>
+        </div>
+
+        <div id="footer">
+            <p>Thank you for visiting.</p>
+            <p>Anh Le - 2025</p>
+            <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:36px; color:white"></i></a>
+            <p>Email: <a href="mailto: anhle.ahl@gmail.com">anhle.ahl@gmail.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
