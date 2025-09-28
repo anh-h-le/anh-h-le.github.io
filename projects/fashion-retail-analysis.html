@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        margin: 0px;
+    }
+    #header {
+        background-image: url('img/futuristic.jpg');
+        background-position: top center;
+        background-size: 60%;
+        /* background-repeat: no-repeat; */
+        padding-top: 300px;
+        padding-bottom: 300px;
+        text-align: center;
+    }
+    h1 {
+        /* padding-left: 50px; */
+        margin: auto;
+        font-size: 5em;
+        color: #d8e9f2;
+        /* font-family: system-ui; */
+        font-family: Tahoma;
+        font-weight: bold;
+    }
+    .veil {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-image: linear-gradient(to bottom, rgba(1, 1, 1, 0.7) 10%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    }
+    #main-buttons {
+        display: flex;
+        gap: 120px;
+        color: white;
+        font-family: Google Sans Code;
+        font-size: 1.25em;
+        position: absolute;
+        top: 50px;
+        right: 150px;
+        height: 50%;
+    }
+    .link {
+        color: white;
+        text-decoration: none;
+    }
+    .link:hover {
+        color: #0a66c2;
+    }
+    #collage {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 1100px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 20px;
+        margin-top: 50px;
+    }
+    .collage-item {
+        width: 350px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 8px rgb(2, 2, 72);
+    }
+    #content {
+        background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
+    }
+    #dashboard-heading {
+        font-family: Tahoma;
+        color: #0a66c2;
+        font-size: 2.25em;
+        margin-top: 70px;
+    }
+    #sales {
+        width: 900px;
+    }
+    #product {
+        width: 900px;
+    }
+    .dashboard {
+        display: flex;
+        margin-top: 30px;
+        align-items: center;
+        font-family: Google Sans Code;
+        color: darkblue;
+    }
+    .dashboard-col {
+        width: 200px;
+    }
+    #dashboards-section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+    img {
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    }
+    #overview-heading {
+        font-family: Tahoma;
+        color: #0a66c2;
+        font-size: 2.25em;
+        margin-top: 150px;
+    }
+    #overview-section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+        color: darkblue;
+        font-family: Google Sans Code;
+    }
+    #footer {
+        background-color: black;
+        padding: 20px;
+        margin-top: 30px;
+        font-family: Google Sans Code;
+        color: white;
+        text-align: center;
+    }
+    .button {
+        color: white;
+        text-decoration: none;
+        font-size: 40px;
+    }
+    .button:hover {
+        color: #0a66c2;
+    }
+    #insights-recs {
+        width: 1100px;
+        margin: auto;
+        font-family: Google Sans Code;
+        color: white;
+        margin-top: 70px;
+    }
+    .row {
+        display: flex;
+        gap: 25px;
+    }
+    .col {
+        width: 350px;
+        padding: auto;
+    }
+    .arrow {
+        text-align: center;
+    }
+    h2 {
+        font-family: Tahoma;
+        color:#d8e9f2;
+        font-size: 2.25em;
+        margin-bottom: 0px;
+    }
+    #rebrand-section {
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+    #steps {
+        color: white;
+        font-family: Google Sans Code;
+        margin-top: 30px;
+    }
+    #ir-body {
+        margin-top: 15px;
+    }
+</style>
+<body>
+    <div id="content">
+        <div id="header">
+            <h1>BBSTORE'S Fashion Retail Performance Analysis</h1>
+            <div class="veil"></div>
+                <div id="main-buttons">
+                    <p><a href="https://anh-h-le.github.io/index.html" class="link"><strong>Home</strong></a></p>
+                    <p><a href="overview.html" class="link"><strong>Projects</strong></a></p>
+                </div>
+            <div id="collage">
+                <img class="collage-item" src="img/fashion-retail-analysis/clothing.png" alt="Fashion Items">
+                <img class="collage-item" src="img/fashion-retail-analysis/bbstores-logo.jpg" alt="BBSTORE'S logo">
+                <img class="collage-item" src="img/fashion-retail-analysis/portrait.jpg" alt="Feminine Portrait">
+            </div>
+        </div>
+        <div id="overview-section">
+            <h2 id="overview-heading">Overview</h2>
+            <p style="margin-top: 30px;">BBSTORE'S is a women's fashion brand in Vietnam focused on elegance and minimalism, targeting women aged 25–34 with higher incomes and modern lifestyles who value quality and individuality. The brand is seeking opportunities to improve and grow in fashion retail, particularly in boosting in-store sales revenue.</p>
+            <p>Data from 01/01/2024-05/26/2024 was collected and stored in an Excel file with two sheets:</p>
+                <ul>
+                    <li><em>Daily Sales:</em> each row shows sales data for a single day.</li>
+                    <li><em>Transaction Data:</em> each row represents an individual transaction; multiple transactions may occur per day.</li>
+                    
+                </ul>   
+        </div>
+        <div id="dashboards-section">
+            <h2 id="dashboard-heading">Dashboards</h2>
+            <div class="dashboard">
+                <div class="dashboard-col">
+                    <p>Sales Performance</p>
+                </div>
+                <img id="sales" src="img/fashion-retail-analysis/sales.png" alt="Sales Performance Dashboard">
+            </div>
+            <div class="dashboard">
+                <div class="dashboard-col">
+                    <p>Product Performance</p>
+                </div>
+                <img id="product" src="img/fashion-retail-analysis/product.png" alt="Product Performance Dashboard">
+            </div>
+        </div>
+        <div id="insights-recs">
+            <div class="row">
+                <div class="col">
+                    <h2>Insights</h2>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                    <h2>Recommendations</h2>
+                </div>
+            </div>
+
+            <div id="ir-body">
+                <div class="row">
+                    <div class="col">
+                        <p>Sales were low early in the week and stronger toward the end.</p>
+                    </div>
+                    <div class="col">
+                        <p class="arrow">------------------></p>
+                    </div>
+                    <div class="col">
+                        <p>Boost sales on low days (Mon-Wed)</p>
+                        <ul>
+                            <li>
+                                Discounts:  
+                                <ul>
+                                    <li>5-10% off or buy-1-get-1 on accessories.</li>
+                                    <li>Discount on lowest-priced item when buying multiple items.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Flash sales:
+                                <ul>
+                                    <li>Midday flash sales on the first Mon/Tue/Wed monthly to drive urgency.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <p>Sales declined over time.</p>
+                        <ul>
+                            <li>Revenue and traffic fell.</li>
+                            <li>Conversion rose as traffic halved.</li>
+                            <li>Target met in the last month but dropped from Jan-May.</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <p class="arrow">------------------></p>
+                    </div>
+                    <div class="col">
+                        <p>Use events and perks to increase traffic</p>
+                        <ul>
+                            <li>Early access to new or limited collections.</li>
+                            <li>Personalized gifts on special occasions.</li>
+                            <li>Personal styling to upsell accessories.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <p>Product categorization overlooked room for improvement.</p>
+                        <ul>
+                            <li>Some “discontinued” items performed well with discounts.</li>
+                            <li>Some non-discontinued items underperformed.</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <p class="arrow">------------------></p>
+                    </div>
+                    <div class="col">
+                        <p>Reassess discontinuation and underperformance</p>
+                        <ul>
+                            <li>Test lower prices on discontinued items:
+                                <ul>
+                                    <li>Sales improve: keep product at adjusted price.</li>
+                                    <li>No improvement: ask customers if urgency or visibility drove sales.</li>
+                                </ul>
+                            </li>
+                            <li>For weak items not discontinued: research and survey customers:
+                                <ul>
+                                    <li>If quality issues: improve design or manufacturing/sourcing.</li>
+                                    <li>If low awareness: use newsletters, staff training, and ads.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <p>Pricing was not justified by segmentation and positioning.</p>
+                        <ul>
+                            <li>Customers are price-sensitive and avoid higher price points.</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <p class="arrow">------------------></p>
+                    </div>
+                    <div class="col">
+                        <p><strong>Introduce product tiers</strong></p>
+                        <ul>
+                            <li>Essential: functional everyday pieces.</li>
+                            <li>Signature: timeless minimalist upgrades.</li>
+                            <li>Couture: limited, exclusive high-end pieces.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rebrand-section">
+            <h2>Key Recommendation for Sustainable Growth: Rebranding</h2>
+            <div id="steps">
+                <p><strong>Step 1: Analytics</strong></p>
+                <ul>
+                    <li>Understand brand perception via customers' feedback, social media presence, and competition.</li>
+                </ul>
+                <p><strong>Step 2: Redefining/Reevaluating Brand's Mission and Values</strong></p>
+                <ul>
+                    <li>Decide on where the brand is headed and corresponding unique selling points.</li>
+                </ul>
+                <p><strong>Step 3: Develop/Refresh the Signature Brand Aesthetic for Enhanced Visibility</strong></p>
+                <ul>
+                    <li>Update the logo and colors to reflect the brand's direction.</li>
+                    <li>Design branded packaging and gifts.</li>
+                </ul>
+                <p><strong>Step 4: Ensure Quality Consistency</strong></p>
+                <ul>
+                    <li>Make sure product designs reflect the brand's image and values.</li>
+                    <li>Monitor the production process to ensure high-quality finished goods.</li>
+                </ul>
+                <p><strong>Step 5: Invest in Brand Promotion</strong></p>
+                <ul>
+                    <li>Sponsor fashion shows to enhance visibility of the brand.</li>
+                    <li>Collab with celebrities that advocate for the brand's values.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>Thank you for visiting.</p>
+            <p>Anh Le - 2025</p>
+            <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank" class="button"><i class="fa fa-linkedin-square"></i></a>
+            <p>Email: <a href="mailto: anhle.ahl@gmail.com" class="link">anhle.ahl@gmail.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
