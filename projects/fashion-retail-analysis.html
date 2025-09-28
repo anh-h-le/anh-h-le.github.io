@@ -68,7 +68,7 @@
     .collage-item {
         width: 350px;
         border-radius: 20px;
-        box-shadow: 0px 0px 8px rgb(2, 2, 72);
+        box-shadow: 0px 0px 8px rgb(10, 85, 142);
     }
     #content {
         background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
@@ -90,7 +90,7 @@
         margin-top: 30px;
         align-items: center;
         font-family: Google Sans Code;
-        color: darkblue;
+        color: white;
     }
     .dashboard-col {
         width: 200px;
@@ -113,7 +113,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 1100px;
-        color: darkblue;
+        color: rgb(10, 85, 142);
         font-family: Google Sans Code;
     }
     #footer {
@@ -132,29 +132,49 @@
     .button:hover {
         color: #0a66c2;
     }
-    #insights-recs {
+    .insights-table {
         width: 1100px;
-        margin: auto;
-        font-family: Google Sans Code;
-        color: white;
+        margin: 0 auto;
         margin-top: 70px;
+        border-collapse: collapse;
+        font-family: 'Google Sans Code', monospace;
+        color: white;
     }
-    .row {
-        display: flex;
-        gap: 25px;
+
+    .insights-table th,
+    .insights-table td {
+        border: 1px solid white;
+        padding: 12px;
+        vertical-align: top;
     }
-    .col {
-        width: 350px;
-        padding: auto;
-    }
-    .arrow {
+
+    .insights-table th {
         text-align: center;
+        font-family: Tahoma;
+        color:#d8e9f2;
+        font-size: 2.25em;
+        border: none;
+    }
+
+    .insights-table td {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .insights-table ul {
+        margin: 6px 0 0 16px;
+        padding-left: 14px;
+    }
+
+    .insights-table li {
+        margin-bottom: 4px;
     }
     h2 {
         font-family: Tahoma;
         color:#d8e9f2;
         font-size: 2.25em;
         margin-bottom: 0px;
+        margin-top: 70px;
     }
     #rebrand-section {
         margin-top: 70px;
@@ -167,8 +187,8 @@
         font-family: Google Sans Code;
         margin-top: 30px;
     }
-    #ir-body {
-        margin-top: 15px;
+    .subtitle {
+        color: skyblue;
     }
 </style>
 <body>
@@ -211,144 +231,118 @@
                 <img id="product" src="img/fashion-retail-analysis/product.png" alt="Product Performance Dashboard">
             </div>
         </div>
-        <div id="insights-recs">
-            <div class="row">
-                <div class="col">
-                    <h2>Insights</h2>
-                </div>
-                <div class="col"></div>
-                <div class="col">
-                    <h2>Recommendations</h2>
-                </div>
-            </div>
 
-            <div id="ir-body">
-                <div class="row">
-                    <div class="col">
-                        <p>Sales were low early in the week and stronger toward the end.</p>
-                    </div>
-                    <div class="col">
-                        <p class="arrow">------------------></p>
-                    </div>
-                    <div class="col">
-                        <p>Boost sales on low days (Mon-Wed)</p>
+        <table class="insights-table">
+            <thead>
+                <tr>
+                <th>Insights</th>
+                <th>Recommendations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Sales low early week, stronger later.</td>
+                <td>
+                    <strong>Promotions on Mon-Wed:</strong>
+                    <ul>
+                    <li>5–10% off or B1G1 on accessories.</li>
+                    <li>Discount on lowest-priced item in multi-buy.</li>
+                    <li>Midday flash sales first Mon/Tue/Wed monthly.</li>
+                    </ul>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    Sales declined over time:
+                    <ul>
+                    <li>Revenue and traffic fell.</li>
+                    <li>Conversion rose as traffic halved.</li>
+                    <li>Target met last month but down Jan-May.</li>
+                    </ul>
+                </td>
+                <td>
+                    <strong>Drive traffic with events and perks:</strong>
+                    <ul>
+                    <li>Early access to new/limited collections.</li>
+                    <li>Gifts on special occasions.</li>
+                    <li>Personal styling to upsell accessories.</li>
+                    </ul>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    Product categorization missed opportunities:
+                    <ul>
+                    <li>Discounted “discontinued” items performed well.</li>
+                    <li>Some active items underperformed.</li>
+                    </ul>
+                </td>
+                <td>
+                    <strong>Reassess product mix:</strong>
+                    <ul>
+                    <li>Test lower prices on discontinued items:
                         <ul>
-                            <li>
-                                Discounts:  
-                                <ul>
-                                    <li>5-10% off or buy-1-get-1 on accessories.</li>
-                                    <li>Discount on lowest-priced item when buying multiple items.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                Flash sales:
-                                <ul>
-                                    <li>Midday flash sales on the first Mon/Tue/Wed monthly to drive urgency.</li>
-                                </ul>
-                            </li>
+                        <li>Sales improve: keep new price.</li>
+                        <li>No change: check urgency/visibility.</li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <p>Sales declined over time.</p>
+                    </li>
+                    <li>Weak active items: survey customers:
                         <ul>
-                            <li>Revenue and traffic fell.</li>
-                            <li>Conversion rose as traffic halved.</li>
-                            <li>Target met in the last month but dropped from Jan-May.</li>
+                        <li>Quality: improve design/sourcing.</li>
+                        <li>Low awareness: newsletters, staff training, ads.</li>
                         </ul>
-                    </div>
-                    <div class="col">
-                        <p class="arrow">------------------></p>
-                    </div>
-                    <div class="col">
-                        <p>Use events and perks to increase traffic</p>
-                        <ul>
-                            <li>Early access to new or limited collections.</li>
-                            <li>Personalized gifts on special occasions.</li>
-                            <li>Personal styling to upsell accessories.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <p>Product categorization overlooked room for improvement.</p>
-                        <ul>
-                            <li>Some “discontinued” items performed well with discounts.</li>
-                            <li>Some non-discontinued items underperformed.</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p class="arrow">------------------></p>
-                    </div>
-                    <div class="col">
-                        <p>Reassess discontinuation and underperformance</p>
-                        <ul>
-                            <li>Test lower prices on discontinued items:
-                                <ul>
-                                    <li>Sales improve: keep product at adjusted price.</li>
-                                    <li>No improvement: ask customers if urgency or visibility drove sales.</li>
-                                </ul>
-                            </li>
-                            <li>For weak items not discontinued: research and survey customers:
-                                <ul>
-                                    <li>If quality issues: improve design or manufacturing/sourcing.</li>
-                                    <li>If low awareness: use newsletters, staff training, and ads.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <p>Pricing was not justified by segmentation and positioning.</p>
-                        <ul>
-                            <li>Customers are price-sensitive and avoid higher price points.</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <p class="arrow">------------------></p>
-                    </div>
-                    <div class="col">
-                        <p><strong>Introduce product tiers</strong></p>
-                        <ul>
-                            <li>Essential: functional everyday pieces.</li>
-                            <li>Signature: timeless minimalist upgrades.</li>
-                            <li>Couture: limited, exclusive high-end pieces.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </li>
+                    </ul>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    A need for targeted marketing and product positioning:
+                    <ul>
+                    <li>Customers price-sensitive, avoid higher points.</li>
+                    </ul>
+                </td>
+                <td>
+                    <strong>Introduce product tiers:</strong>
+                    <ul>
+                    <li>Essential: functional everyday pieces.</li>
+                    <li>Signature: timeless minimalist upgrades.</li>
+                    <li>Couture: limited, exclusive high-end pieces.</li>
+                    </ul>
+                </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div id="rebrand-section">
             <h2>Key Recommendation for Sustainable Growth: Rebranding</h2>
             <div id="steps">
-                <p><strong>Step 1: Analytics</strong></p>
+                <p class="subtitle">Step 1: Analytics</p>
                 <ul>
-                    <li>Understand brand perception via customers' feedback, social media presence, and competition.</li>
+                    <li>Assess brand perception through customer feedback, social media, and competitors.</li>
                 </ul>
-                <p><strong>Step 2: Redefining/Reevaluating Brand's Mission and Values</strong></p>
+
+                <p class="subtitle">Step 2: Redefine Mission and Values</p>
                 <ul>
-                    <li>Decide on where the brand is headed and corresponding unique selling points.</li>
+                    <li>Clarify brand direction and unique selling points.</li>
                 </ul>
-                <p><strong>Step 3: Develop/Refresh the Signature Brand Aesthetic for Enhanced Visibility</strong></p>
+
+                <p class="subtitle">Step 3: Refresh Signature Aesthetic</p>
                 <ul>
-                    <li>Update the logo and colors to reflect the brand's direction.</li>
-                    <li>Design branded packaging and gifts.</li>
+                    <li>Update logo and colors to match new direction.</li>
+                    <li>Create branded packaging and gifts.</li>
                 </ul>
-                <p><strong>Step 4: Ensure Quality Consistency</strong></p>
+
+                <p class="subtitle">Step 4: Ensure Quality Consistency</p>
                 <ul>
-                    <li>Make sure product designs reflect the brand's image and values.</li>
-                    <li>Monitor the production process to ensure high-quality finished goods.</li>
+                    <li>Align product design with brand image and values.</li>
+                    <li>Monitor production to maintain high quality.</li>
                 </ul>
-                <p><strong>Step 5: Invest in Brand Promotion</strong></p>
+
+                <p class="subtitle">Step 5: Promote the Brand</p>
                 <ul>
-                    <li>Sponsor fashion shows to enhance visibility of the brand.</li>
-                    <li>Collab with celebrities that advocate for the brand's values.</li>
+                    <li>Sponsor fashion shows to boost visibility.</li>
+                    <li>Collaborate with aligned celebrities.</li>
                 </ul>
             </div>
         </div>
