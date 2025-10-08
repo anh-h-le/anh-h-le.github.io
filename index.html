@@ -14,35 +14,35 @@
             text-align: center;
             padding-top: 280px;
             padding-bottom: 20px;
+            position: relative; /* Keeps main-buttons anchored to the header */
         }
+
         h1 {
-            /* padding-left: 50px; */
             margin: auto;
             font-size: 10em;
             color: #d8e9f2;
-            /* font-family: system-ui; */
             font-family: Tahoma;
             font-weight: bold;
         }
+
         #description {
             color: white;
             font-family: Google Sans Code;
             font-size: 1.25em;
             padding-top: 10px;
         }
+
         .marquee-container {
             width: 100%; 
             overflow: hidden; 
             white-space: nowrap; 
         }
+
         @keyframes scrollText {
-        0% {
-            transform: translateX(30%); 
+            0% { transform: translateX(30%); }
+            100% { transform: translateX(-130%); }
         }
-        100% {
-            transform: translateX(-130%);
-        }
-        }
+
         #welcome {
             font-family: Google Sans Code;
             color: white;
@@ -52,6 +52,7 @@
             display: inline-block;
             animation: scrollText 15s linear infinite;
         }
+
         .veil {
             position: absolute;
             top: 0;
@@ -59,10 +60,14 @@
             width: 100%;
             height: 50%;
             background-image: linear-gradient(to bottom, rgba(1, 1, 1, 0.7) 10%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+            z-index: 1; /* stay behind buttons */
+            pointer-events: none; /* make veil click-through */
         }
+
         body {
             margin: 0px;
         }
+
         #main-buttons {
             display: flex;
             gap: 120px;
@@ -73,7 +78,9 @@
             top: 50px;
             right: 150px;
             height: 50%;
+            z-index: 2; /* bring buttons above the veil */
         }
+
         h2 {
             font-family: Tahoma;
             font-weight: bold;
@@ -81,24 +88,12 @@
             font-size: 2.25em;
             color: #d8e9f2;
         }
-        #headshot {
-            width: 500px;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-        }
+
         #introduction {
             font-family: Google Sans Code;
             color: white;
         }
-        #about-me {
-            display: flex;
-            align-items: center;
-            width: 1100px;
-            margin-top: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 100px;
-            gap: 50px;
-        }
+
         #resume-button {
             font-family: Google Sans Code;
             background-color: black;
@@ -108,16 +103,24 @@
             width: 150px;
             text-align: center;
         }
+
         #content {
             background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
         }
+
         #contact-info {
             width: 1100px;
+            max-width: 95%;
             margin: auto;
         }
+
         #form {
             margin-left: 200px;
+            width: 700px;
+            max-width: 100%;
+            height: 500px;
         }
+
         #footer {
             background-color: black;
             padding: 20px;
@@ -126,40 +129,127 @@
             color: white;
             text-align: center;
         }
+
         .button {
             color: white;
             text-decoration: none;
             font-size: 40px;
         }
+
         .button:hover {
             color: #0a66c2;
         }
+
         .link {
             color: white;
             text-decoration: none;
         }
+
         .link:hover {
             color: #0a66c2;
         }
 
+        /* ======= ABOUT ME FIX ======= */
+        #about-me {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1100px;
+            max-width: 95%;
+            margin: 15px auto 100px auto;
+            gap: 50px;
+        }
+
+        #about-me > div {
+            flex: 1 1 500px;
+        }
+
+        #headshot {
+            width: 500px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ======= RESPONSIVENESS ======= */
+        @media (max-width: 1200px) {
+            #main-buttons {
+                gap: 60px;
+                right: 60px;
+            }
+            h1 {
+                font-size: 7em;
+            }
+        }
+
+        @media (max-width: 900px) {
+            #about-me {
+                flex-direction: column;
+                text-align: center;
+            }
+            #main-buttons {
+                right: 20px;
+                top: 20px;
+                gap: 40px;
+            }
+            #header {
+                padding-top: 180px;
+            }
+            h1 {
+                font-size: 5em;
+            }
+            #form {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 3em;
+            }
+            #welcome {
+                font-size: 1em;
+            }
+            #description {
+                font-size: 1em;
+            }
+            #main-buttons {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-end;
+                right: 10px;
+                top: 10px;
+            }
+            #resume-button {
+                width: 100%;
+                max-width: 200px;
+                margin: 20px auto 0;
+            }
+            #form {
+                width: 100%;
+                height: 450px;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="content">
         <div>
             <div id="header">
+                <div id="main-buttons">
+                    <p><a href="https://anh-h-le.github.io/index.html" class="link"><strong>Home</strong></a></p>
+                    <p><a href="projects/overview.html" class="link"><strong>Projects</strong></a></p>
+                </div>
+
                 <h1>Anh Le</h1>
                 <p id="description">A Business Intelligence & Analytics Enthusiast</p>
-                <div id="marquee-container">
+                <div class="marquee-container">
                     <p id="welcome">Welcome to my portfolio website. I'm glad to have you here.</p>
                 </div>
-            </div>
-            <div class="veil"></div>
-            <div id="main-buttons">
-                <p><a href="https://anh-h-le.github.io/index.html" class="link"><strong>Home</strong></a></p>
-                <p><a href="projects/overview.html" class="link"><strong>Projects</strong></a></p>
+                <div class="veil"></div>
             </div>
         </div>
+
         <div id="about-me">
             <div>
                 <h2>About Me</h2>
@@ -178,7 +268,7 @@
             <div>
                 <h2>Let's Connect!</h2>
             </div>
-            <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSdS5bHNlNqhZxiODSpk8iguamciISO3SsPemPR_tzvNdzYR5Q/viewform?embedded=true" width="700" height="500" frameborder="0">Loading…</iframe>
+            <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSdS5bHNlNqhZxiODSpk8iguamciISO3SsPemPR_tzvNdzYR5Q/viewform?embedded=true" frameborder="0">Loading…</iframe>
         </div>
 
         <div id="footer">
