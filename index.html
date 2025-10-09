@@ -1,282 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anh Le | Portfolio Website</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        #header {
-            background-image: url(img/abstract.jpg);
-            background-position: 70%;
-            background-size: cover;
-            text-align: center;
-            padding-top: 280px;
-            padding-bottom: 20px;
-            position: relative; /* Keeps main-buttons anchored to the header */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anh Le | Portfolio Website</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      margin: 0;
+    }
 
-        h1 {
-            margin: auto;
-            font-size: 10em;
-            color: #d8e9f2;
-            font-family: Tahoma, monospace;
-            font-weight: bold;
-        }
+    #content {
+      background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
+    }
 
-        #description {
-            color: white;
-            font-family: Google Sans Code;
-            font-size: 1.25em;
-            padding-top: 10px;
-        }
+    /* ===== HEADER ===== */
+    #header {
+      background-image: url(img/abstract.jpg);
+      background-position: 70%;
+      background-size: cover;
+      text-align: center;
+      padding-top: 280px;
+      padding-bottom: 20px;
+      position: relative;
+    }
 
-        .marquee-container {
-            width: 100%; 
-            overflow: hidden; 
-            white-space: nowrap; 
-        }
+    h1 {
+      margin: auto;
+      font-size: 10em;
+      color: #d8e9f2;
+      font-family: Tahoma;
+      font-weight: bold;
+    }
 
-        @keyframes scrollText {
-            0% { transform: translateX(30%); }
-            100% { transform: translateX(-130%); }
-        }
+    #description {
+      color: white;
+      font-family: Google Sans Code;
+      font-size: 1.25em;
+      padding-top: 10px;
+      margin-bottom: 10px;
+    }
 
-        #welcome {
-            font-family: Google Sans Code;
-            color: white;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 180px;
-            display: inline-block;
-            animation: scrollText 15s linear infinite;
-        }
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
-        .veil {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background-image: linear-gradient(to bottom, rgba(1, 1, 1, 0.7) 10%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-            z-index: 1; /* stay behind buttons */
-            pointer-events: none; /* make veil click-through */
-        }
+    @keyframes scrollText {
+      0% { transform: translateX(30%); }
+      100% { transform: translateX(-130%); }
+    }
 
-        body {
-            margin: 0px;
-        }
+    #welcome {
+      font-family: Google Sans Code;
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 180px;
+      display: inline-block;
+      animation: scrollText 15s linear infinite;
+    }
 
-        #main-buttons {
-            display: flex;
-            gap: 120px;
-            color: white;
-            font-family: Google Sans Code;
-            font-size: 1.25em;
-            position: absolute;
-            top: 50px;
-            right: 150px;
-            height: 50%;
-            z-index: 2; /* bring buttons above the veil */
-        }
+    .veil {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-image: linear-gradient(to bottom, rgba(1,1,1,0.7) 10%, rgba(0,0,0,0.4), rgba(0,0,0,0.1), rgba(0,0,0,0));
+      z-index: 1;
+      pointer-events: none;
+    }
 
-        h2 {
-            font-family: Tahoma, monospace;
-            font-weight: bold;
-            margin-bottom: 40px;
-            font-size: 2.25em;
-            color: #d8e9f2;
-        }
+    #main-buttons {
+      display: flex;
+      gap: 120px;
+      color: white;
+      font-family: Google Sans Code;
+      font-size: 1.25em;
+      position: absolute;
+      top: 50px;
+      right: 150px;
+      height: 50%;
+      z-index: 2;
+    }
 
-        #introduction {
-            font-family: Google Sans Code;
-            color: white;
-        }
+    #main-buttons p { margin: 0; }
 
-        #resume-button {
-            font-family: Google Sans Code;
-            background-color: black;
-            color: white;
-            padding: 5px;
-            margin-top: 20px;
-            width: 150px;
-            text-align: center;
-        }
+    .link {
+      color: white;
+      text-decoration: none;
+    }
 
-        #content {
-            background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
-        }
+    .link:hover {
+      color: #0a66c2;
+    }
 
-        #contact-info {
-            width: 1100px;
-            max-width: 95%;
-            margin: auto;
-        }
+    /* ===== ABOUT SECTION ===== */
+    h2 {
+      font-family: Tahoma;
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-size: 2.25em;
+      color: #d8e9f2;
+    }
 
-        #form {
-            margin-left: 200px;
-            width: 700px;
-            max-width: 100%;
-            height: 500px;
-        }
+    #about-me-heading {
+        color: #0a66c2;
+    }
 
-        #footer {
-            background-color: black;
-            padding: 20px;
-            margin-top: 30px;
-            font-family: Google Sans Code;
-            color: white;
-            text-align: center;
-        }
+    #about-me {
+      display: flex;
+      align-items: center;
+      width: 1100px;
+      margin-top: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 100px;
+      gap: 50px;
+    }
 
-        .button {
-            color: white;
-            text-decoration: none;
-            font-size: 40px;
-        }
+    #headshot {
+      width: 500px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    }
 
-        .button:hover {
-            color: #0a66c2;
-        }
+    #introduction {
+      font-family: Google Sans Code;
+      color: white;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
 
-        .link {
-            color: white;
-            text-decoration: none;
-        }
+    #resume-button {
+      font-family: Google Sans Code;
+      background-color: black;
+      color: white;
+      padding: 5px;
+      margin-top: 20px;
+      width: 150px;
+      text-align: center;
+    }
 
-        .link:hover {
-            color: #0a66c2;
-        }
+    /* ===== CONTACT ===== */
+    #contact-info {
+      width: 1100px;
+      margin: auto;
+      text-align: left;
+    }
 
-        /* ======= ABOUT ME FIX ======= */
-        #about-me {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 1100px;
-            max-width: 95%;
-            margin: 15px auto 100px auto;
-            gap: 50px;
-        }
+    #form {
+      margin-left: 200px;
+      width: 700px;
+      height: 500px;
+      border: none;
+    }
 
-        #about-me > div {
-            flex: 1 1 500px;
-        }
+    /* ===== FOOTER ===== */
+    #footer {
+      background-color: black;
+      padding: 20px;
+      margin-top: 30px;
+      font-family: Google Sans Code;
+      color: white;
+      text-align: center;
+    }
 
-        #headshot {
-            width: 500px;
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-        }
+    .button {
+      color: white;
+      text-decoration: none;
+      font-size: 40px;
+    }
 
-        /* ======= RESPONSIVENESS ======= */
-        @media (max-width: 1200px) {
-            #main-buttons {
-                gap: 60px;
-                right: 60px;
-            }
-            h1 {
-                font-size: 7em;
-            }
-        }
+    .button:hover {
+      color: #0a66c2;
+    }
 
-        @media (max-width: 900px) {
-            #about-me {
-                flex-direction: column;
-                text-align: center;
-            }
-            #main-buttons {
-                right: 20px;
-                top: 20px;
-                gap: 40px;
-            }
-            #header {
-                padding-top: 180px;
-            }
-            h1 {
-                font-size: 5em;
-            }
-            #form {
-                margin-left: 0;
-            }
-        }
+    /* ===== RESPONSIVENESS ===== */
+    @media (max-width: 1100px) {
+      #about-me, #contact-info { width: 90%; }
+      h1 { font-size: 7em; }
+      #main-buttons { gap: 80px; right: 100px; }
+    }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 3em;
-            }
-            #welcome {
-                font-size: 1em;
-            }
-            #description {
-                font-size: 1em;
-            }
-            #main-buttons {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-end;
-                right: 10px;
-                top: 10px;
-            }
-            #resume-button {
-                width: 100%;
-                max-width: 200px;
-                margin: 20px auto 0;
-            }
-            #form {
-                width: 100%;
-                height: 450px;
-            }
-        }
-    </style>
+    @media (max-width: 900px) {
+      #main-buttons {
+        position: static;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 20px;
+        text-align: center;
+        z-index: 10;
+      }
+
+      #header {
+        padding-top: 200px;
+        padding-bottom: 80px;
+      }
+
+      h1 { font-size: 4em; }
+      #description { font-size: 1em; margin-bottom: 5px; }
+      #welcome { font-size: 1em; margin-top: 40px; }
+
+      #about-me {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #headshot {
+        order: 1;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      #introduction {
+        order: 2;
+        text-align: center;
+        font-size: 1em;
+        line-height: 1.5em;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 1.8em;
+      }
+
+      #resume-button {
+        margin: 20px auto 0 auto;
+        display: block;
+      }
+
+      #contact-info {
+        text-align: center;
+      }
+
+      #form {
+        width: 90%;
+        height: 400px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #main-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      h1 { font-size: 2.5em; }
+      #description { font-size: 0.9em; }
+      #welcome { font-size: 0.9em; margin-top: 30px; }
+
+      #about-me, #contact-info {
+        width: 95%;
+        margin: 40px auto;
+      }
+
+      h2 { font-size: 1.5em; }
+
+      #introduction {
+        font-size: 0.9em;
+        line-height: 1.4em;
+      }
+
+      #resume-button {
+        width: 100%;
+        max-width: 200px;
+      }
+
+      #form {
+        width: 100%;
+        height: 350px;
+      }
+
+      #header {
+        padding-top: 160px;
+        padding-bottom: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="content">
-        <div>
-            <div id="header">
-                <div id="main-buttons">
-                    <p><a href="https://anh-h-le.github.io/index.html" class="link"><strong>Home</strong></a></p>
-                    <p><a href="projects/overview.html" class="link"><strong>Projects</strong></a></p>
-                </div>
-
-                <h1>Anh Le</h1>
-                <p id="description">A Business Intelligence & Analytics Enthusiast</p>
-                <div class="marquee-container">
-                    <p id="welcome">Welcome to my portfolio website. I'm glad to have you here.</p>
-                </div>
-                <div class="veil"></div>
-            </div>
-        </div>
-
-        <div id="about-me">
-            <div>
-                <h2>About Me</h2>
-                <div id="introduction">
-                    <p>I'm a junior majoring in Business Administration at the University of Southern California (USC) with a minor in Applied Analytics.</p>
-                    <p>I bring skills of data management, visualization, and analytics with familiarity with Python, Power BI, Tableau, Gurobi Optimizer, and Microsoft Excel. 
-                        I aspire to combine my business knowledge and technical skills to derive meaningful insights driving informed business decisions.</p>
-                    <p>I'm excited for opportunities to connect, collaborate, and share my works.</p>
-                </div>
-                <p id="resume-button">View my resume</p>
-            </div>
-            <img id="headshot" src="img/headshot.jpg" alt="My Headshot">
-        </div>
-
-        <div id="contact-info">
-            <div>
-                <h2>Let's Connect!</h2>
-            </div>
-            <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSdS5bHNlNqhZxiODSpk8iguamciISO3SsPemPR_tzvNdzYR5Q/viewform?embedded=true" frameborder="0">Loading…</iframe>
-        </div>
-
-        <div id="footer">
-            <p>Thank you for visiting.</p>
-            <p>Anh Le - 2025</p>
-            <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank" class="button"><i class="fa fa-linkedin-square"></i></a>
-            <p>Email: <a href="mailto: anhle.ahl@gmail.com" class="link">anhle.ahl@gmail.com</a></p>
-        </div>
+  <div id="content">
+    <div id="header">
+      <h1>Anh Le</h1>
+      <p id="description">A Business Intelligence & Analytics Enthusiast</p>
+      <div class="marquee-container">
+        <p id="welcome">Welcome to my portfolio website. I'm glad to have you here.</p>
+      </div>
+      <div class="veil"></div>
+      <div id="main-buttons">
+        <p><a href="https://anh-h-le.github.io/index.html" class="link"><strong>Home</strong></a></p>
+        <p><a href="projects/overview.html" class="link"><strong>Projects</strong></a></p>
+      </div>
     </div>
+
+    <div id="about-me">
+      <div>
+        <h2 id="about-me-heading">About Me</h2>
+        <div id="introduction">
+          <p>I'm a junior majoring in Business Administration at the University of Southern California (USC) with a minor in Applied Analytics.</p>
+          <p>I bring skills of data management, visualization, and analytics with familiarity with Python, Power BI, Tableau, Gurobi Optimizer, and Microsoft Excel. 
+            I aspire to combine my business knowledge and technical skills to derive meaningful insights driving informed business decisions.</p>
+          <p>I'm excited for opportunities to connect, collaborate, and share my works.</p>
+        </div>
+        <p id="resume-button">View my resume</p>
+      </div>
+      <img id="headshot" src="img/headshot.jpg" alt="My Headshot">
+    </div>
+
+    <div id="contact-info">
+      <h2>Let's Connect!</h2>
+      <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSdS5bHNlNqhZxiODSpk8iguamciISO3SsPemPR_tzvNdzYR5Q/viewform?embedded=true">Loading…</iframe>
+    </div>
+
+    <div id="footer">
+      <p>Thank you for visiting.</p>
+      <p>Anh Le - 2025</p>
+      <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank" class="button"><i class="fa fa-linkedin-square"></i></a>
+      <p>Email: <a href="mailto:anhle.ahl@gmail.com" class="link">anhle.ahl@gmail.com</a></p>
+    </div>
+  </div>
 </body>
 </html>
