@@ -15,7 +15,7 @@
       color: white;
       line-height: 1.7;
       text-align: left;
-      font-size: 1.1em;
+      font-size: 1.1em; /* desktop base (matches overview/home) */
     }
 
     /* ===== HEADER ===== */
@@ -51,13 +51,14 @@
       pointer-events: none;
     }
 
-    /* ===== MAIN BUTTONS ===== */
+    /* ===== MAIN BUTTONS (kept consistent with home/overview) ===== */
     #main-buttons {
       display: flex;
       gap: 120px;
       color: white;
       font-family: Google Sans Code;
-      font-size: 1.18em; /* ✅ perfectly matched size */
+      font-size: clamp(0.9em, 1.2vw + 0.8em, 1.18em);
+      /* ^ automatically shrinks on smaller screens like home/projects */
       position: absolute;
       top: 50px;
       right: 150px;
@@ -71,15 +72,12 @@
       color: white;
       text-decoration: none;
     }
-
-    .link:hover {
-      color: #0a66c2;
-    }
+    .link:hover { color: #0a66c2; }
 
     /* ===== COLLAGE ===== */
     #collage {
       position: absolute;
-      bottom: -150px;
+      bottom: -150px; /* half overlaps header */
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -105,9 +103,9 @@
       width: 1100px;
       color: rgb(10, 85, 142);
       font-family: 'Google Sans Code', sans-serif;
-      padding-top: 230px;
+      padding-top: 230px; /* space under collage */
+      font-size: 1em; /* body text size anchor for this section (inherits from body) */
     }
-
     #overview-heading {
       font-family: Tahoma;
       color: #0a66c2;
@@ -120,6 +118,7 @@
       width: 1100px;
       margin-top: 80px;
       font-family: 'Google Sans Code', sans-serif;
+      font-size: 1em; /* keep body scale */
     }
 
     h2 {
@@ -142,7 +141,7 @@
     .dashboard-col {
       width: 200px;
       font-family: 'Google Sans Code', sans-serif;
-      font-size: 1.1em;
+      font-size: 1em; /* same as body text (as requested) */
       color: white;
       text-align: left;
     }
@@ -159,15 +158,14 @@
       overflow-x: auto;
       text-align: left;
     }
-
     .insights-table {
       width: 1100px;
       margin: 70px auto 0 auto;
       border-collapse: collapse;
       font-family: 'Google Sans Code', sans-serif;
       color: white;
+      font-size: 1em; /* body scale */
     }
-
     .insights-table th,
     .insights-table td {
       border: 1px solid white;
@@ -175,7 +173,6 @@
       vertical-align: top;
       text-align: left;
     }
-
     .insights-table th {
       text-align: center;
       color: #d8e9f2;
@@ -183,37 +180,25 @@
       border: none;
       font-family: Tahoma;
     }
-
     .insights-table ul {
       margin: 6px 0 0 16px;
       padding-left: 14px;
     }
-
-    .insights-table li {
-      margin-bottom: 4px;
-    }
+    .insights-table li { margin-bottom: 4px; }
 
     /* ===== REBRAND SECTION ===== */
     #rebrand-section {
       margin: 70px auto;
       width: 1100px;
       font-family: 'Google Sans Code', sans-serif;
+      font-size: 1em; /* body scale */
     }
-
     #rebrand-section h2 {
       color: #d8e9f2;
       text-align: left;
     }
-
-    #steps {
-      color: white;
-      margin-top: 30px;
-    }
-
-    .subtitle {
-      color: skyblue;
-      font-family: 'Google Sans Code', sans-serif;
-    }
+    #steps { color: white; margin-top: 30px; }
+    .subtitle { color: skyblue; font-family: 'Google Sans Code', sans-serif; }
 
     /* ===== FOOTER ===== */
     #footer {
@@ -223,55 +208,41 @@
       font-family: 'Google Sans Code', sans-serif;
       color: white;
       text-align: center;
+      font-size: 1em; /* body scale */
     }
-
     .button {
       color: white;
       text-decoration: none;
       font-size: 40px;
     }
+    .button:hover { color: #0a66c2; }
 
-    .button:hover {
-      color: #0a66c2;
-    }
-
-    /* ===== RESPONSIVENESS ===== */
+    /* ======= RESPONSIVENESS (match home & overview behavior) ======= */
     @media (max-width: 1100px) {
-      #main-buttons {
-        gap: 80px;
-        right: 100px;
-      }
+      /* Body text slightly down, like your other pages */
+      body { font-size: 1em; }
 
-      #overview-section,
-      #dashboards-section,
-      #rebrand-section {
-        width: 90%;
-      }
+      #main-buttons { gap: 80px; right: 100px; }
+      #overview-section, #dashboards-section, #rebrand-section { width: 90%; }
 
-      .collage-item {
-        width: 300px;
-      }
+      .collage-item { width: 300px; }
+
+      /* Headings slightly smaller, matching others */
+      h2, #overview-heading { font-size: 2em; }
+      .insights-table th { font-size: 2em; }
+      h1 { font-size: 4em; } /* to mirror your other pages’ header scaling */
     }
 
     @media (max-width: 900px) {
+      /* Match home/overview: body shrinks a bit more */
       body {
+        font-size: 1em;
         text-align: center;
       }
 
-      h1, h2, #rebrand-section h2 {
-        text-align: center;
-      }
-
-      #overview-section,
-      #dashboards-section,
-      #rebrand-section {
-        text-align: center;
-      }
-
-      #steps {
-        text-align: left;
-        display: inline-block;
-      }
+      h1, h2, #rebrand-section h2 { text-align: center; }
+      #overview-section, #dashboards-section, #rebrand-section { text-align: center; }
+      #steps { text-align: left; display: inline-block; }
 
       #main-buttons {
         position: static;
@@ -282,87 +253,52 @@
         margin-top: 20px;
         text-align: center;
         z-index: 10;
+        font-size: 1.18em; /* keep identical behavior to home/overview */
       }
 
-      #header {
-        padding-top: 200px;
-        padding-bottom: 150px;
-      }
+      #header { padding-top: 200px; padding-bottom: 150px; }
+      h1 { font-size: 3em; }
 
-      h1 {
-        font-size: 3em;
-      }
+      /* Only center collage image remains */
+      .collage-item:first-child, .collage-item:last-child { display: none; }
+      #collage { position: static; margin-top: 60px; transform: none; }
+      .collage-item { width: 300px; display: block; margin: 0 auto; }
 
-      .collage-item:first-child,
-      .collage-item:last-child {
-        display: none;
-      }
+      #overview-section { padding-top: 80px; }
 
-      #collage {
-        position: static;
-        margin-top: 60px;
-        transform: none;
-      }
-
-      .collage-item {
-        width: 300px;
-        display: block;
-        margin: 0 auto;
-      }
-
-      #overview-section {
-        padding-top: 80px;
-      }
-
-      .dashboard {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      #sales, #product {
-        width: 100%;
-      }
-
+      .dashboard { flex-direction: column; align-items: center; }
+      #sales, #product { width: 100%; }
       .dashboard-col {
         width: auto;
         text-align: center;
         margin-bottom: 15px;
-        font-size: 1.1em;
+        font-size: 1em; /* equal to body text on all screens */
       }
 
-      .insights-table {
-        width: 95%;
-        font-size: 0.95em;
-      }
+      .insights-table { width: 95%; font-size: 0.95em; }
+      h2, #overview-heading { font-size: 1.8em; }
+      .insights-table th { font-size: 1.8em; }
     }
 
     @media (max-width: 600px) {
+      /* Match home/overview: smallest body size */
+      body { font-size: 0.95em; }
+
       #main-buttons {
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        font-size: 1.18em; /* keep nav consistent at small sizes */
       }
 
-      h1 {
-        font-size: 2.5em;
-      }
+      h1 { font-size: 2.5em; }
+      #header { padding-top: 160px; padding-bottom: 100px; }
+      .collage-item { width: 70%; }
+      #overview-section { padding-top: 70px; }
 
-      #header {
-        padding-top: 160px;
-        padding-bottom: 100px;
-      }
-
-      .collage-item {
-        width: 70%;
-      }
-
-      #overview-section {
-        padding-top: 70px;
-      }
-
-      .insights-table {
-        font-size: 0.9em;
-      }
+      .insights-table { font-size: 0.9em; }
+      h2, #overview-heading { font-size: 1.5em; }
+      .insights-table th { font-size: 1.5em; }
     }
   </style>
 </head>
