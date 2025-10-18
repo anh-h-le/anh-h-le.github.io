@@ -1,357 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anh Le | Fashion Retail Analysis Project</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            margin: 0px;
-        }
-        #header {
-            background-image: url('img/futuristic.jpg');
-            background-position: top center;
-            background-size: 60%;
-            /* background-repeat: no-repeat; */
-            padding-top: 300px;
-            padding-bottom: 300px;
-            text-align: center;
-        }
-        h1 {
-            /* padding-left: 50px; */
-            margin: auto;
-            font-size: 5em;
-            color: #d8e9f2;
-            /* font-family: system-ui; */
-            font-family: Tahoma;
-            font-weight: bold;
-        }
-        .veil {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background-image: linear-gradient(to bottom, rgba(1, 1, 1, 0.7) 10%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-        }
-        #main-buttons {
-            display: flex;
-            gap: 120px;
-            color: white;
-            font-family: Google Sans Code;
-            font-size: 1.25em;
-            position: absolute;
-            top: 50px;
-            right: 150px;
-            height: 50%;
-        }
-        .link {
-            color: white;
-            text-decoration: none;
-        }
-        .link:hover {
-            color: #0a66c2;
-        }
-        #collage {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            width: 1100px;
-            left: 50%;
-            transform: translateX(-50%);
-            gap: 20px;
-            margin-top: 50px;
-        }
-        .collage-item {
-            width: 350px;
-            border-radius: 20px;
-            box-shadow: 0px 0px 8px rgb(10, 85, 142);
-        }
-        #content {
-            background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
-        }
-        #dashboard-heading {
-            font-family: Tahoma;
-            color: #0a66c2;
-            font-size: 2.25em;
-            margin-top: 70px;
-        }
-        #sales {
-            width: 900px;
-        }
-        #product {
-            width: 900px;
-        }
-        .dashboard {
-            display: flex;
-            margin-top: 30px;
-            align-items: center;
-            font-family: Google Sans Code;
-            color: white;
-        }
-        .dashboard-col {
-            width: 200px;
-        }
-        #dashboards-section {
-            margin-left: auto;
-            margin-right: auto;
-            width: 1100px;
-        }
-        img {
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-        }
-        #overview-heading {
-            font-family: Tahoma;
-            color: #0a66c2;
-            font-size: 2.25em;
-            margin-top: 150px;
-        }
-        #overview-section {
-            margin-left: auto;
-            margin-right: auto;
-            width: 1100px;
-            color: rgb(10, 85, 142);
-            font-family: Google Sans Code;
-        }
-        #footer {
-            background-color: black;
-            padding: 20px;
-            margin-top: 30px;
-            font-family: Google Sans Code;
-            color: white;
-            text-align: center;
-        }
-        .button {
-            color: white;
-            text-decoration: none;
-            font-size: 40px;
-        }
-        .button:hover {
-            color: #0a66c2;
-        }
-        .insights-table {
-            width: 1100px;
-            margin: 0 auto;
-            margin-top: 70px;
-            border-collapse: collapse;
-            font-family: 'Google Sans Code', monospace;
-            color: white;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anh Le | Fashion Retail Analysis Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        .insights-table th,
-        .insights-table td {
-            border: 1px solid white;
-            padding: 12px;
-            vertical-align: top;
-        }
+  <style>
+    body {
+      margin: 0;
+      background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
+      font-family: 'Google Sans Code', sans-serif;
+      color: white;
+      line-height: 1.7;
+      text-align: left;
+      font-size: 1.1em;
+    }
 
-        .insights-table th {
-            text-align: center;
-            font-family: Tahoma;
-            color:#d8e9f2;
-            font-size: 2.25em;
-            border: none;
-        }
+    /* ===== HEADER ===== */
+    #header {
+      background-image: url('img/futuristic.jpg');
+      background-position: top center;
+      background-size: 60%;
+      text-align: center;
+      padding-top: 300px;
+      padding-bottom: 300px;
+      position: relative;
+      overflow: visible;
+    }
 
-        .insights-table td {
-            text-align: left;
-        }
+    h1 {
+      margin: auto;
+      font-size: 5em;
+      color: #d8e9f2;
+      font-family: Tahoma;
+      font-weight: bold;
+      z-index: 2;
+      position: relative;
+    }
 
-        .insights-table ul {
-            margin: 6px 0 0 16px;
-            padding-left: 14px;
-        }
+    .veil {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-image: linear-gradient(to bottom, rgba(1,1,1,0.7) 10%, rgba(0,0,0,0.4), rgba(0,0,0,0.1), rgba(0,0,0,0));
+      z-index: 1;
+      pointer-events: none;
+    }
 
-        .insights-table li {
-            margin-bottom: 4px;
-        }
-        h2 {
-            font-family: Tahoma;
-            color:#d8e9f2;
-            font-size: 2.25em;
-            margin-bottom: 0px;
-            margin-top: 70px;
-        }
-        #rebrand-section {
-            margin-top: 70px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 1100px;
-        }
-        #steps {
-            color: white;
-            font-family: Google Sans Code;
-            margin-top: 30px;
-        }
-        .subtitle {
-            color: skyblue;
-        }
-    </style>
+    /* ===== MAIN BUTTONS ===== */
+    #main-buttons {
+      display: flex;
+      gap: 120px;
+      color: white;
+      font-family: Google Sans Code;
+      font-size: 1.18em; /* ✅ perfectly matched size */
+      position: absolute;
+      top: 50px;
+      right: 150px;
+      height: 50%;
+      z-index: 2;
+    }
+
+    #main-buttons p { margin: 0; }
+
+    .link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      color: #0a66c2;
+    }
+
+    /* ===== COLLAGE ===== */
+    #collage {
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      z-index: 3;
+      flex-wrap: nowrap;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .collage-item {
+      width: 350px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 8px rgb(10, 85, 142);
+      height: auto;
+    }
+
+    /* ===== OVERVIEW SECTION ===== */
+    #overview-section {
+      margin: 0 auto;
+      width: 1100px;
+      color: rgb(10, 85, 142);
+      font-family: 'Google Sans Code', sans-serif;
+      padding-top: 230px;
+    }
+
+    #overview-heading {
+      font-family: Tahoma;
+      color: #0a66c2;
+      font-size: 2.25em;
+    }
+
+    /* ===== DASHBOARDS ===== */
+    #dashboards-section {
+      margin: 0 auto;
+      width: 1100px;
+      margin-top: 80px;
+      font-family: 'Google Sans Code', sans-serif;
+    }
+
+    h2 {
+      font-family: Tahoma;
+      color: #0a66c2;
+      font-size: 2.25em;
+      font-weight: bold;
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    .dashboard {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 40px;
+      color: white;
+    }
+
+    .dashboard-col {
+      width: 200px;
+      font-family: 'Google Sans Code', sans-serif;
+      font-size: 1.1em;
+      color: white;
+      text-align: left;
+    }
+
+    #sales, #product {
+      width: 900px;
+      height: auto;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ===== INSIGHTS TABLE ===== */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      text-align: left;
+    }
+
+    .insights-table {
+      width: 1100px;
+      margin: 70px auto 0 auto;
+      border-collapse: collapse;
+      font-family: 'Google Sans Code', sans-serif;
+      color: white;
+    }
+
+    .insights-table th,
+    .insights-table td {
+      border: 1px solid white;
+      padding: 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .insights-table th {
+      text-align: center;
+      color: #d8e9f2;
+      font-size: 2.25em;
+      border: none;
+      font-family: Tahoma;
+    }
+
+    .insights-table ul {
+      margin: 6px 0 0 16px;
+      padding-left: 14px;
+    }
+
+    .insights-table li {
+      margin-bottom: 4px;
+    }
+
+    /* ===== REBRAND SECTION ===== */
+    #rebrand-section {
+      margin: 70px auto;
+      width: 1100px;
+      font-family: 'Google Sans Code', sans-serif;
+    }
+
+    #rebrand-section h2 {
+      color: #d8e9f2;
+      text-align: left;
+    }
+
+    #steps {
+      color: white;
+      margin-top: 30px;
+    }
+
+    .subtitle {
+      color: skyblue;
+      font-family: 'Google Sans Code', sans-serif;
+    }
+
+    /* ===== FOOTER ===== */
+    #footer {
+      background-color: black;
+      padding: 20px;
+      margin-top: 30px;
+      font-family: 'Google Sans Code', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .button {
+      color: white;
+      text-decoration: none;
+      font-size: 40px;
+    }
+
+    .button:hover {
+      color: #0a66c2;
+    }
+
+    /* ===== RESPONSIVENESS ===== */
+    @media (max-width: 1100px) {
+      #main-buttons {
+        gap: 80px;
+        right: 100px;
+      }
+
+      #overview-section,
+      #dashboards-section,
+      #rebrand-section {
+        width: 90%;
+      }
+
+      .collage-item {
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      body {
+        text-align: center;
+      }
+
+      h1, h2, #rebrand-section h2 {
+        text-align: center;
+      }
+
+      #overview-section,
+      #dashboards-section,
+      #rebrand-section {
+        text-align: center;
+      }
+
+      #steps {
+        text-align: left;
+        display: inline-block;
+      }
+
+      #main-buttons {
+        position: static;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 20px;
+        text-align: center;
+        z-index: 10;
+      }
+
+      #header {
+        padding-top: 200px;
+        padding-bottom: 150px;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+
+      .collage-item:first-child,
+      .collage-item:last-child {
+        display: none;
+      }
+
+      #collage {
+        position: static;
+        margin-top: 60px;
+        transform: none;
+      }
+
+      .collage-item {
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      #overview-section {
+        padding-top: 80px;
+      }
+
+      .dashboard {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #sales, #product {
+        width: 100%;
+      }
+
+      .dashboard-col {
+        width: auto;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+      }
+
+      .insights-table {
+        width: 95%;
+        font-size: 0.95em;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #main-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      #header {
+        padding-top: 160px;
+        padding-bottom: 100px;
+      }
+
+      .collage-item {
+        width: 70%;
+      }
+
+      #overview-section {
+        padding-top: 70px;
+      }
+
+      .insights-table {
+        font-size: 0.9em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="content">
-        <div id="header">
-            <h1>BBSTORE'S Fashion Retail Performance Analysis</h1>
-            <div class="veil"></div>
-                <div id="main-buttons">
-                    <p><a href="https://anh-h-le.github.io/index.html" class="link"><strong>Home</strong></a></p>
-                    <p><a href="overview.html" class="link"><strong>Projects</strong></a></p>
-                </div>
-            <div id="collage">
-                <img class="collage-item" src="img/fashion-retail-analysis/clothing.png" alt="Fashion Items">
-                <img class="collage-item" src="img/fashion-retail-analysis/bbstores-logo.jpg" alt="BBSTORE'S logo">
-                <img class="collage-item" src="img/fashion-retail-analysis/portrait.jpg" alt="Feminine Portrait">
-            </div>
-        </div>
-        <div id="overview-section">
-            <h2 id="overview-heading">Overview</h2>
-            <p style="margin-top: 30px;">BBSTORE'S is a women's fashion brand in Vietnam focused on elegance and minimalism, targeting women aged 25–34 with higher incomes and modern lifestyles who value quality and individuality. The brand is seeking opportunities to improve and grow in fashion retail, particularly in boosting in-store sales revenue.</p>
-            <p>Data from 01/01/2024-05/26/2024 was collected and stored in an Excel file with two sheets:</p>
-                <ul>
-                    <li><em>Daily Sales:</em> each row shows sales data for a single day.</li>
-                    <li><em>Transaction Data:</em> each row represents an individual transaction; multiple transactions may occur per day.</li>
-                    
-                </ul>   
-        </div>
-        <div id="dashboards-section">
-            <h2 id="dashboard-heading">Dashboards</h2>
-            <div class="dashboard">
-                <div class="dashboard-col">
-                    <p>Sales Performance</p>
-                </div>
-                <img id="sales" src="img/fashion-retail-analysis/sales.png" alt="Sales Performance Dashboard">
-            </div>
-            <div class="dashboard">
-                <div class="dashboard-col">
-                    <p>Product Performance</p>
-                </div>
-                <img id="product" src="img/fashion-retail-analysis/product.png" alt="Product Performance Dashboard">
-            </div>
-        </div>
+  <div id="content">
+    <div id="header">
+      <h1>BBSTORE'S Fashion Retail Performance Analysis</h1>
+      <div class="veil"></div>
 
-        <table class="insights-table">
-            <thead>
-                <tr>
-                <th>Insights</th>
-                <th>Recommendations</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>Sales low early week, stronger later.</td>
-                <td>
-                    <strong>Promotions on Mon-Wed:</strong>
-                    <ul>
-                    <li>5–10% off or B1G1 on accessories.</li>
-                    <li>Discount on lowest-priced item in multi-buy.</li>
-                    <li>Midday flash sales first Mon/Tue/Wed monthly.</li>
-                    </ul>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                    Sales declined over time:
-                    <ul>
-                    <li>Revenue and traffic fell.</li>
-                    <li>Conversion rose as traffic halved.</li>
-                    <li>Target met last month but down Jan-May.</li>
-                    </ul>
-                </td>
-                <td>
-                    <strong>Drive traffic with events and perks:</strong>
-                    <ul>
-                    <li>Early access to new/limited collections.</li>
-                    <li>Gifts on special occasions.</li>
-                    <li>Personal styling to upsell accessories.</li>
-                    </ul>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                    Product categorization missed opportunities:
-                    <ul>
-                    <li>Discounted “discontinued” items performed well.</li>
-                    <li>Some active items underperformed.</li>
-                    </ul>
-                </td>
-                <td>
-                    <strong>Reassess product mix:</strong>
-                    <ul>
-                    <li>Test lower prices on discontinued items:
-                        <ul>
-                        <li>Sales improve: keep new price.</li>
-                        <li>No change: check urgency/visibility.</li>
-                        </ul>
-                    </li>
-                    <li>Weak active items: survey customers:
-                        <ul>
-                        <li>Quality: improve design/sourcing.</li>
-                        <li>Low awareness: newsletters, staff training, ads.</li>
-                        </ul>
-                    </li>
-                    </ul>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                    A need for targeted marketing and product positioning:
-                    <ul>
-                    <li>Customers price-sensitive, avoid higher points.</li>
-                    </ul>
-                </td>
-                <td>
-                    <strong>Introduce product tiers:</strong>
-                    <ul>
-                    <li>Essential: functional everyday pieces.</li>
-                    <li>Signature: timeless minimalist upgrades.</li>
-                    <li>Couture: limited, exclusive high-end pieces.</li>
-                    </ul>
-                </td>
-                </tr>
-            </tbody>
-        </table>
+      <div id="main-buttons">
+        <p><a href="https://anh-h-le.github.io/index.html" class="link"><strong>Home</strong></a></p>
+        <p><a href="overview.html" class="link"><strong>Projects</strong></a></p>
+      </div>
 
-        <div id="rebrand-section">
-            <h2>Key Recommendation for Sustainable Growth: Rebranding</h2>
-            <div id="steps">
-                <p class="subtitle">Step 1: Analytics</p>
-                <ul>
-                    <li>Assess brand perception through customer feedback, social media, and competitors.</li>
-                </ul>
-
-                <p class="subtitle">Step 2: Redefine Mission and Values</p>
-                <ul>
-                    <li>Clarify brand direction and unique selling points.</li>
-                </ul>
-
-                <p class="subtitle">Step 3: Refresh Signature Aesthetic</p>
-                <ul>
-                    <li>Update logo and colors to match new direction.</li>
-                    <li>Create branded packaging and gifts.</li>
-                </ul>
-
-                <p class="subtitle">Step 4: Ensure Quality Consistency</p>
-                <ul>
-                    <li>Align product design with brand image and values.</li>
-                    <li>Monitor production to maintain high quality.</li>
-                </ul>
-
-                <p class="subtitle">Step 5: Promote the Brand</p>
-                <ul>
-                    <li>Sponsor fashion shows to boost visibility.</li>
-                    <li>Collaborate with aligned celebrities.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="footer">
-            <p>Thank you for visiting.</p>
-            <p>Anh Le - 2025</p>
-            <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank" class="button"><i class="fa fa-linkedin-square"></i></a>
-            <p>Email: <a href="mailto: anhle.ahl@gmail.com" class="link">anhle.ahl@gmail.com</a></p>
-        </div>
+      <div id="collage">
+        <img class="collage-item" src="img/fashion-retail-analysis/clothing.png" alt="Fashion Items">
+        <img class="collage-item" src="img/fashion-retail-analysis/bbstores-logo.jpg" alt="BBSTORE'S logo">
+        <img class="collage-item" src="img/fashion-retail-analysis/portrait.jpg" alt="Feminine Portrait">
+      </div>
     </div>
+
+    <div id="overview-section">
+      <h2 id="overview-heading">Overview</h2>
+      <p style="margin-top: 30px;">BBSTORE'S is a women's fashion brand in Vietnam focused on elegance and minimalism, targeting women aged 25–34 with higher incomes and modern lifestyles who value quality and individuality. The brand is seeking opportunities to improve and grow in fashion retail, particularly in boosting in-store sales revenue.</p>
+      <p>Data from 01/01/2024–05/26/2024 was collected and stored in an Excel file with two sheets:</p>
+      <ul>
+        <li><em>Daily Sales:</em> each row shows sales data for a single day.</li>
+        <li><em>Transaction Data:</em> each row represents an individual transaction; multiple transactions may occur per day.</li>
+      </ul>
+    </div>
+
+    <div id="dashboards-section">
+      <h2>Dashboards</h2>
+      <div class="dashboard">
+        <div class="dashboard-col"><p>Sales Performance</p></div>
+        <img id="sales" src="img/fashion-retail-analysis/sales.png" alt="Sales Performance Dashboard">
+      </div>
+      <div class="dashboard">
+        <div class="dashboard-col"><p>Product Performance</p></div>
+        <img id="product" src="img/fashion-retail-analysis/product.png" alt="Product Performance Dashboard">
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="insights-table">
+        <thead>
+          <tr>
+            <th>Insights</th>
+            <th>Recommendations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sales low early week, stronger later.</td>
+            <td>
+              <strong>Promotions on Mon–Wed:</strong>
+              <ul>
+                <li>5–10% off or B1G1 on accessories.</li>
+                <li>Discount on lowest-priced item in multi-buy.</li>
+                <li>Midday flash sales first Mon/Tue/Wed monthly.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sales declined over time:
+              <ul>
+                <li>Revenue and traffic fell.</li>
+                <li>Conversion rose as traffic halved.</li>
+                <li>Target met last month but down Jan–May.</li>
+              </ul>
+            </td>
+            <td>
+              <strong>Drive traffic with events and perks:</strong>
+              <ul>
+                <li>Early access to new/limited collections.</li>
+                <li>Gifts on special occasions.</li>
+                <li>Personal styling to upsell accessories.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Product categorization missed opportunities:
+              <ul>
+                <li>Discounted “discontinued” items performed well.</li>
+                <li>Some active items underperformed.</li>
+              </ul>
+            </td>
+            <td>
+              <strong>Reassess product mix:</strong>
+              <ul>
+                <li>Test lower prices on discontinued items:
+                  <ul>
+                    <li>Sales improve: keep new price.</li>
+                    <li>No change: check urgency/visibility.</li>
+                  </ul>
+                </li>
+                <li>Weak active items: survey customers:
+                  <ul>
+                    <li>Quality: improve design/sourcing.</li>
+                    <li>Low awareness: newsletters, staff training, ads.</li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              A need for targeted marketing and product positioning:
+              <ul>
+                <li>Customers price-sensitive, avoid higher points.</li>
+              </ul>
+            </td>
+            <td>
+              <strong>Introduce product tiers:</strong>
+              <ul>
+                <li>Essential: functional everyday pieces.</li>
+                <li>Signature: timeless minimalist upgrades.</li>
+                <li>Couture: limited, exclusive high-end pieces.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="rebrand-section">
+      <h2>Key Recommendation for Sustainable Growth: Rebranding</h2>
+      <div id="steps">
+        <p class="subtitle">Step 1: Analytics</p>
+        <ul>
+          <li>Assess brand perception through customer feedback, social media, and competitors.</li>
+        </ul>
+
+        <p class="subtitle">Step 2: Redefine Mission and Values</p>
+        <ul>
+          <li>Clarify brand direction and unique selling points.</li>
+        </ul>
+
+        <p class="subtitle">Step 3: Refresh Signature Aesthetic</p>
+        <ul>
+          <li>Update logo and colors to match new direction.</li>
+          <li>Create branded packaging and gifts.</li>
+        </ul>
+
+        <p class="subtitle">Step 4: Ensure Quality Consistency</p>
+        <ul>
+          <li>Align product design with brand image and values.</li>
+          <li>Monitor production to maintain high quality.</li>
+        </ul>
+
+        <p class="subtitle">Step 5: Promote the Brand</p>
+        <ul>
+          <li>Sponsor fashion shows to boost visibility.</li>
+          <li>Collaborate with aligned celebrities.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="footer">
+      <p>Thank you for visiting.</p>
+      <p>Anh Le - 2025</p>
+      <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank" class="button"><i class="fa fa-linkedin-square"></i></a>
+      <p>Email: <a href="mailto:anhle.ahl@gmail.com" class="link">anhle.ahl@gmail.com</a></p>
+    </div>
+  </div>
 </body>
 </html>
