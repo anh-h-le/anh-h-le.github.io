@@ -6,106 +6,48 @@
   <title>Anh Le | Projects Overview</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../main.css">
   <style>
-    body {
-      margin: 0;
-    }
-
-    #content {
-      background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
-    }
-
-    /* ===== HEADER ===== */
     #header {
       background-image: url(img/data-background.jpg);
       background-position: bottom;
-      background-size: cover;
-      text-align: center;
       padding-top: 320px;
       padding-bottom: 300px;
-      position: relative;
     }
 
     h1 {
-      margin: auto;
       font-size: 9em;
-      color: #d8e9f2;
-      font-family: Tahoma;
-      font-weight: bold;
     }
 
-    .veil {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      background-image: linear-gradient(to bottom, rgba(1,1,1,0.7) 10%, rgba(0,0,0,0.4), rgba(0,0,0,0.1), rgba(0,0,0,0));
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    #main-buttons {
-      display: flex;
-      gap: 120px;
-      color: white;
-      font-family: Google Sans Code;
-      font-size: clamp(0.9em, 1.2vw + 0.8em, 1.18em);
-      /* ^ automatically shrinks on smaller screens like home/projects */
-      position: absolute;
-      top: 50px;
-      right: 150px;
-      height: 50%;
-      z-index: 2;
-    }
-
-    #main-buttons p { margin: 0; }
-
-    .link {
-      color: white;
-      text-decoration: none;
-    }
-
-    .link:hover {
-      color: #0a66c2;
-    }
-
-    /* ===== SECTIONS ===== */
     h2 {
-      font-family: Tahoma;
-      color: #d8e9f2;
-      font-size: 2.25em;
       margin-bottom: 0;
     }
 
     #brighter {
-      font-family: Tahoma;
       color: #0a66c2;
-      font-size: 2.25em;
-      margin-bottom: 0;
     }
 
     #brighter-sub {
       color: rgb(10,85,142);
       font-family: Google Sans Code;
       margin-top: 15px;
-      font-size: 1.1em;
-      line-height: 1.6em;
+      font-size: 1em;
+      line-height: 1.5em;
     }
 
     .text {
       color: white;
       font-family: Google Sans Code;
-      font-size: 1.1em;
-      line-height: 1.6em;
+      font-size: 1em;
+      line-height: 1.5em;
     }
 
     .subtitle {
       color: skyblue;
       font-family: Google Sans Code;
       margin-top: 15px;
-      font-size: 1.1em;
-      line-height: 1.6em;
+      font-size: 1em;
+      line-height: 1.5em;
     }
 
     #bbstores, #playlist, #others {
@@ -125,18 +67,14 @@
       align-items: flex-end;
     }
 
-    #playlist-description { flex-direction: row-reverse; }
-
     #minimalist, #music-notes, #sunroof, #bike {
-      width: 500px;
+      width: 400px;
       height: 300px;
       box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
     }
 
-    #sunroof, #bike { background-color: white; }
-
     #playlist {
-      text-align: right;
+      text-align: left;
       width: 1100px;
       margin-top: 100px;
       margin-left: auto;
@@ -148,9 +86,10 @@
       color: #d8e9f2;
     }
 
-    .sub { text-align: center; }
+    .sub { 
+      text-align: center; 
+    }
 
-    /* ===== VIEW MORE BUTTONS ===== */
     .view-more1, .view-more2, .view-more3 {
       font-family: Google Sans Code;
       background-color: black;
@@ -163,9 +102,6 @@
       width: 150px;
     }
 
-    .view-more2 { margin-left: 390px; }
-
-    /* Fix for “Other Projects” button */
     .view-more3 {
       display: block;
       margin: 20px auto 0 auto;
@@ -173,55 +109,34 @@
       text-align: center;
     }
 
-    /* ===== FOOTER ===== */
-    #footer {
-      background-color: black;
-      padding: 20px;
-      margin-top: 30px;
-      font-family: Google Sans Code;
-      color: white;
-      text-align: center;
-    }
-
-    .button {
-      color: white;
-      text-decoration: none;
-      font-size: 40px;
-    }
-
-    .button:hover {
-      color: #0a66c2;
-    }
-
-    /* ===== RESPONSIVENESS ===== */
     @media (max-width: 1100px) {
-      #bbstores, #playlist, #others { width: 90%; }
-      h1 { font-size: 7em; }
-      #main-buttons { gap: 80px; right: 100px; }
+      #bbstores, #playlist, #others { 
+        width: 90%; 
+      }
+
+      h1 { 
+        font-size: 6em; 
+      }
     }
 
     @media (max-width: 900px) {
-      #main-buttons {
-        position: static;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-top: 20px;
-        text-align: center;
-        z-index: 10;
-      }
-
       #header {
-        padding-top: 200px;
-        padding-bottom: 150px;
+        padding-top: 180px;
+        padding-bottom: 20px;
       }
 
-      h1 { font-size: 4em; }
+      #main-buttons {
+        margin-top: 150px;
+      }
+
+      h1 { 
+        font-size: 4em; 
+      }
 
       #bb-description, #playlist-description, #descriptions {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
       }
 
       #bb-description img, #playlist-description img, #descriptions img {
@@ -260,15 +175,17 @@
     }
 
     @media (max-width: 600px) {
-      #main-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+      #header {
+        padding-top: 160px;
       }
-
+      
+      #main-buttons {
+        margin-bottom: 50px;
+      }
       .view-more1, .view-more2, .view-more3 {
         width: 100%;
         max-width: 200px;
+        font-size: 0.8em;
       }
 
       #bbstores, #playlist, #others {
@@ -276,19 +193,25 @@
         width: 95%;
       }
 
-      h1 { font-size: 2.5em; }
+      #bb-description, #playlist-description, #descriptions {
+        gap: 20px;
+      }
+
+      h1 { 
+        font-size: 2em; 
+      }
 
       h2, #brighter {
-        font-size: 1.5em;
+        font-size: 1.25em;
       }
 
       .text {
-        font-size: 0.9em;
-        line-height: 1.4em;
+        font-size: 0.8em;
+        line-height: 1.5em;
       }
 
       .subtitle, #brighter-sub {
-        font-size: 0.9em;
+        font-size: 0.8em;
       }
     }
   </style>

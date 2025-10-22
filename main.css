@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+}
+
+#content {
+    background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
+}
+
+#header {
+    background-size: cover;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    margin: auto;
+    color: #d8e9f2;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+
+.veil {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(to bottom, rgba(1, 1, 1, 0.7) 10%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+}
+
+#main-buttons {
+    display: flex;
+    gap: 120px;
+    color: white;
+    font-family: Google Sans Code;
+    font-size: 1.25em;
+    position: absolute;
+    top: 50px;
+    right: 150px;
+    z-index: 2;
+}
+
+#main-buttons p {
+    margin: 0;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #0a66c2;
+}
+
+h2 {
+    font-family: Tahoma;
+    font-size: 2.25em;
+    color: #d8e9f2;
+}
+
+#footer {
+    background-color: black;
+    padding: 20px;
+    margin-top: 30px;
+    font-family: Google Sans Code;
+    color: white;
+    text-align: center;
+}
+
+.button {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.button:hover {
+    color: #0a66c2;
+}
+
+@media (max-width: 1100px) {
+    #main-buttons {
+        gap: 80px;
+        right: 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    #main-buttons {
+        font-size: 1em;
+        position: static;
+        justify-content: center;
+        /* flex-direction: column; */
+        gap: 80px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        text-align: center;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 600px) {
+    #main-buttons {
+        font-size: 0.8em;
+        /* flex-direction: column; */
+        align-items: center;
+        gap: 50px;
+    }
+
+    #footer {
+        font-size: 0.8em;
+    }
+}

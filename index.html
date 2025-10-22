@@ -6,38 +6,23 @@
   <title>Anh Le | Portfolio Website</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="main.css">
   <style>
-    body {
-      margin: 0;
-    }
-
-    #content {
-      background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
-    }
-
-    /* ===== HEADER ===== */
     #header {
       background-image: url(img/abstract.jpg);
       background-position: 70%;
-      background-size: cover;
-      text-align: center;
       padding-top: 280px;
       padding-bottom: 20px;
-      position: relative;
     }
 
     h1 {
-      margin: auto;
       font-size: 10em;
-      color: #d8e9f2;
-      font-family: Tahoma;
-      font-weight: bold;
     }
 
     #description {
       color: white;
       font-family: Google Sans Code;
-      font-size: 1.25em;
+      font-size: 1.5em;
       padding-top: 10px;
       margin-bottom: 10px;
     }
@@ -60,51 +45,11 @@
       font-weight: bold;
       margin-top: 180px;
       display: inline-block;
-      animation: scrollText 15s linear infinite;
+      animation: scrollText 10s linear infinite;
     }
 
-    .veil {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      background-image: linear-gradient(to bottom, rgba(1,1,1,0.7) 10%, rgba(0,0,0,0.4), rgba(0,0,0,0.1), rgba(0,0,0,0));
-      z-index: 1;
-      pointer-events: none;
-    }
-
-     #main-buttons {
-      display: flex;
-      gap: 120px;
-      color: white;
-      font-family: Google Sans Code;
-      font-size: clamp(0.9em, 1.2vw + 0.8em, 1.18em);
-      position: absolute;
-      top: 50px;
-      right: 150px;
-      height: 50%;
-      z-index: 2;
-    }
-
-    #main-buttons p { margin: 0; }
-
-    .link {
-      color: white;
-      text-decoration: none;
-    }
-
-    .link:hover {
-      color: #0a66c2;
-    }
-
-    /* ===== ABOUT SECTION ===== */
     h2 {
-      font-family: Tahoma;
-      font-weight: bold;
       margin-bottom: 40px;
-      font-size: 2.25em;
-      color: #d8e9f2;
     }
 
     #about-me-heading {
@@ -130,8 +75,7 @@
     #introduction {
       font-family: Google Sans Code;
       color: white;
-      font-size: 1.1em;
-      line-height: 1.6em;
+      line-height: 1.5em;
     }
 
     #resume-button {
@@ -144,7 +88,6 @@
       text-align: center;
     }
 
-    /* ===== CONTACT ===== */
     #contact-info {
       width: 1100px;
       margin: auto;
@@ -158,62 +101,42 @@
       border: none;
     }
 
-    /* ===== FOOTER ===== */
-    #footer {
-      background-color: black;
-      padding: 20px;
-      margin-top: 30px;
-      font-family: Google Sans Code;
-      color: white;
-      text-align: center;
-    }
-
-    .button {
-      color: white;
-      text-decoration: none;
-      font-size: 40px;
-    }
-
-    .button:hover {
-      color: #0a66c2;
-    }
-
-    /* ===== RESPONSIVENESS ===== */
     @media (max-width: 1100px) {
-      #about-me, #contact-info { width: 90%; }
-      h1 { font-size: 7em; }
-      #main-buttons { gap: 80px; right: 100px; }
+      h1 {
+        font-size: 7em;
+      }
+      
+      #about-me, #contact-info {
+        width: 90%;
+      }
     }
 
     @media (max-width: 900px) {
-      #main-buttons {
-        position: static;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-top: 20px;
-        text-align: center;
-        z-index: 10;
+      h1 {
+        font-size: 4em;
       }
 
       #header {
         padding-top: 200px;
-        padding-bottom: 80px;
       }
 
-      h1 { font-size: 4em; }
-      #description { font-size: 1em; margin-bottom: 5px; }
-      #welcome { font-size: 1em; margin-top: 40px; }
+      #description { 
+        font-size: 1em; 
+        margin-bottom: 5px; 
+      }
+      
+      #welcome { 
+        font-size: 1em; 
+        margin-top: 40px; 
+      }
 
       #about-me {
         flex-direction: column;
-        text-align: center;
       }
 
       #headshot {
         order: 1;
-        width: 90%;
+        width: 80%;
         height: auto;
         margin: 0 auto;
       }
@@ -222,7 +145,6 @@
         order: 2;
         text-align: center;
         font-size: 1em;
-        line-height: 1.5em;
       }
 
       h2 {
@@ -231,7 +153,7 @@
       }
 
       #resume-button {
-        margin: 20px auto 0 auto;
+        margin: 40px auto 0 auto;
         display: block;
       }
 
@@ -247,31 +169,45 @@
     }
 
     @media (max-width: 600px) {
-      #main-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+      #header {
+        padding-top: 200px;
       }
 
-      h1 { font-size: 2.5em; }
-      #description { font-size: 0.9em; }
-      #welcome { font-size: 0.9em; margin-top: 30px; }
+      #main-buttons {
+        margin-top: 60px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      #description { 
+        font-size: 0.8em; 
+      }
+
+      #welcome { 
+        font-size: 0.8em; 
+        margin-top: 30px; 
+      }
 
       #about-me, #contact-info {
         width: 95%;
         margin: 40px auto;
       }
 
-      h2 { font-size: 1.5em; }
+      h2 { 
+        font-size: 1.5em; 
+      }
 
       #introduction {
-        font-size: 0.9em;
-        line-height: 1.4em;
+        font-size: 0.8em;
       }
 
       #resume-button {
         width: 100%;
         max-width: 200px;
+        font-size: 0.8em;
       }
 
       #form {
