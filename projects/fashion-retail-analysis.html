@@ -6,78 +6,25 @@
   <title>Anh Le | Fashion Retail Analysis Project</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../main.css">
 
   <style>
-    body {
-      margin: 0;
-      background-image: linear-gradient(to top, black, rgb(10, 85, 142), lightblue, white);
-      font-family: 'Google Sans Code', sans-serif;
-      color: white;
-      line-height: 1.7;
-      text-align: left;
-      font-size: 1.1em; /* desktop base (matches overview/home) */
-    }
-
-    /* ===== HEADER ===== */
     #header {
       background-image: url('img/futuristic.jpg');
       background-position: top center;
       background-size: 60%;
-      text-align: center;
       padding-top: 300px;
       padding-bottom: 300px;
-      position: relative;
       overflow: visible;
     }
 
     h1 {
-      margin: auto;
       font-size: 5em;
-      color: #d8e9f2;
-      font-family: Tahoma;
-      font-weight: bold;
-      z-index: 2;
-      position: relative;
     }
-
-    .veil {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      background-image: linear-gradient(to bottom, rgba(1,1,1,0.7) 10%, rgba(0,0,0,0.4), rgba(0,0,0,0.1), rgba(0,0,0,0));
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* ===== MAIN BUTTONS (kept consistent with home/overview) ===== */
-    #main-buttons {
-      display: flex;
-      gap: 120px;
-      color: white;
-      font-family: Google Sans Code;
-      font-size: clamp(0.9em, 1.2vw + 0.8em, 1.18em);
-      /* ^ automatically shrinks on smaller screens like home/projects */
-      position: absolute;
-      top: 50px;
-      right: 150px;
-      height: 50%;
-      z-index: 2;
-    }
-
-    #main-buttons p { margin: 0; }
-
-    .link {
-      color: white;
-      text-decoration: none;
-    }
-    .link:hover { color: #0a66c2; }
-
-    /* ===== COLLAGE ===== */
+    
     #collage {
       position: absolute;
-      bottom: -150px; /* half overlaps header */
+      bottom: -150px; 
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -97,35 +44,33 @@
       height: auto;
     }
 
-    /* ===== OVERVIEW SECTION ===== */
     #overview-section {
       margin: 0 auto;
       width: 1100px;
       color: rgb(10, 85, 142);
-      font-family: 'Google Sans Code', sans-serif;
-      padding-top: 230px; /* space under collage */
-      font-size: 1em; /* body text size anchor for this section (inherits from body) */
+      font-family: 'Google Sans Code';
+      padding-top: 230px; 
+      font-size: 1em; 
+      line-height: 1.5em;
     }
+
     #overview-heading {
       font-family: Tahoma;
       color: #0a66c2;
       font-size: 2.25em;
     }
 
-    /* ===== DASHBOARDS ===== */
     #dashboards-section {
       margin: 0 auto;
       width: 1100px;
       margin-top: 80px;
       font-family: 'Google Sans Code', sans-serif;
-      font-size: 1em; /* keep body scale */
+      font-size: 1em; 
+      line-height: 1.5em;
     }
 
     h2 {
-      font-family: Tahoma;
       color: #0a66c2;
-      font-size: 2.25em;
-      font-weight: bold;
       margin-bottom: 0;
       text-align: left;
     }
@@ -141,7 +86,8 @@
     .dashboard-col {
       width: 200px;
       font-family: 'Google Sans Code', sans-serif;
-      font-size: 1em; /* same as body text (as requested) */
+      font-size: 1em; 
+      line-height: 1.5em;
       color: white;
       text-align: left;
     }
@@ -152,20 +98,22 @@
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
     }
 
-    /* ===== INSIGHTS TABLE ===== */
     .table-wrapper {
       width: 100%;
       overflow-x: auto;
       text-align: left;
     }
+
     .insights-table {
       width: 1100px;
       margin: 70px auto 0 auto;
       border-collapse: collapse;
       font-family: 'Google Sans Code', sans-serif;
       color: white;
-      font-size: 1em; /* body scale */
+      font-size: 1em;
+      line-height: 1.5em;
     }
+
     .insights-table th,
     .insights-table td {
       border: 1px solid white;
@@ -173,6 +121,7 @@
       vertical-align: top;
       text-align: left;
     }
+
     .insights-table th {
       text-align: center;
       color: #d8e9f2;
@@ -180,125 +129,185 @@
       border: none;
       font-family: Tahoma;
     }
+
     .insights-table ul {
       margin: 6px 0 0 16px;
       padding-left: 14px;
     }
-    .insights-table li { margin-bottom: 4px; }
 
-    /* ===== REBRAND SECTION ===== */
+    .insights-table li { 
+      margin-bottom: 4px; 
+    }
+
     #rebrand-section {
       margin: 70px auto;
       width: 1100px;
       font-family: 'Google Sans Code', sans-serif;
-      font-size: 1em; /* body scale */
+      font-size: 1em; 
+      line-height: 1.5em;
     }
+
     #rebrand-section h2 {
       color: #d8e9f2;
       text-align: left;
     }
-    #steps { color: white; margin-top: 30px; }
-    .subtitle { color: skyblue; font-family: 'Google Sans Code', sans-serif; }
 
-    /* ===== FOOTER ===== */
-    #footer {
-      background-color: black;
-      padding: 20px;
-      margin-top: 30px;
-      font-family: 'Google Sans Code', sans-serif;
-      color: white;
-      text-align: center;
-      font-size: 1em; /* body scale */
+    #steps { 
+      color: white; margin-top: 30px; 
     }
-    .button {
-      color: white;
-      text-decoration: none;
-      font-size: 40px;
-    }
-    .button:hover { color: #0a66c2; }
 
-    /* ======= RESPONSIVENESS (match home & overview behavior) ======= */
+    .subtitle { 
+      color: skyblue; 
+      font-family: 'Google Sans Code'; 
+    }
+
     @media (max-width: 1100px) {
-      /* Body text slightly down, like your other pages */
-      body { font-size: 1em; }
+      #overview-section, #dashboards-section, #rebrand-section { 
+        width: 90%; 
+      }
 
-      #main-buttons { gap: 80px; right: 100px; }
-      #overview-section, #dashboards-section, #rebrand-section { width: 90%; }
+      #product {
+        width: 90%;
+      }
 
-      .collage-item { width: 300px; }
+      #sales {
+        width: 90%;
+      }
 
-      /* Headings slightly smaller, matching others */
-      h2, #overview-heading { font-size: 2em; }
-      .insights-table th { font-size: 2em; }
-      h1 { font-size: 4em; } /* to mirror your other pages’ header scaling */
+      .insights-table {
+        width: 90%;
+      }
+
+      .dashboard {
+        gap: 10px;
+      }
+
+      .collage-item { 
+        width: 300px; 
+      }
     }
 
     @media (max-width: 900px) {
-      /* Match home/overview: body shrinks a bit more */
       body {
         font-size: 1em;
         text-align: center;
       }
 
-      h1, h2, #rebrand-section h2 { text-align: center; }
-      #overview-section, #dashboards-section, #rebrand-section { text-align: center; }
-      #steps { text-align: left; display: inline-block; }
-
-      #main-buttons {
-        position: static;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-top: 20px;
-        text-align: center;
-        z-index: 10;
-        font-size: 1.18em; /* keep identical behavior to home/overview */
+      h1, h2, #rebrand-section h2 { 
+        text-align: center; 
       }
 
-      #header { padding-top: 200px; padding-bottom: 150px; }
-      h1 { font-size: 3em; }
+      #overview-section, #dashboards-section, #rebrand-section { 
+        text-align: center; 
+      }
 
-      /* Only center collage image remains */
-      .collage-item:first-child, .collage-item:last-child { display: none; }
-      #collage { position: static; margin-top: 60px; transform: none; }
-      .collage-item { width: 300px; display: block; margin: 0 auto; }
+      #steps { 
+        text-align: left; 
+        display: inline-block; 
+      }
 
-      #overview-section { padding-top: 80px; }
+      #header { 
+        padding-top: 200px; 
+        padding-bottom: 50px; 
+      }
 
-      .dashboard { flex-direction: column; align-items: center; }
-      #sales, #product { width: 100%; }
+      h1 { 
+        font-size: 3.5em; 
+      }
+
+      .collage-item:first-child, .collage-item:last-child { 
+        display: none; 
+      }
+
+      #collage { 
+        position: static; 
+        margin-top: 60px; 
+        transform: none; 
+      }
+
+      .collage-item { 
+        width: 300px; 
+        display: block; 
+        margin: 0 auto; 
+      }
+
+      #overview-section { 
+        padding-top: 80px; 
+      }
+
+      .dashboard { 
+        flex-direction: column; 
+        align-items: center; 
+      }
+
+      #sales, #product { 
+        width: 100%; 
+      }
+
       .dashboard-col {
         width: auto;
         text-align: center;
         margin-bottom: 15px;
-        font-size: 1em; /* equal to body text on all screens */
+        font-size: 1em; 
       }
 
-      .insights-table { width: 95%; font-size: 0.95em; }
-      h2, #overview-heading { font-size: 1.8em; }
-      .insights-table th { font-size: 1.8em; }
+      .insights-table { 
+        width: 95%; 
+        font-size: 1em;
+      }
+
+      h2, #overview-heading { 
+        font-size: 1.8em; 
+      }
+
+      .insights-table th { 
+        font-size: 1.8em; 
+      }
     }
 
     @media (max-width: 600px) {
-      /* Match home/overview: smallest body size */
-      body { font-size: 0.95em; }
-
-      #main-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.18em; /* keep nav consistent at small sizes */
+      h1 { 
+        font-size: 2em; 
       }
 
-      h1 { font-size: 2.5em; }
-      #header { padding-top: 160px; padding-bottom: 100px; }
-      .collage-item { width: 70%; }
-      #overview-section { padding-top: 70px; }
+      #header { 
+        padding-top: 160px; 
+        padding-bottom: 50px; 
+      }
 
-      .insights-table { font-size: 0.9em; }
-      h2, #overview-heading { font-size: 1.5em; }
-      .insights-table th { font-size: 1.5em; }
+      .collage-item { 
+        width: 70%; 
+      }
+
+      #overview-section, #rebrand-section, #dashboards-section { 
+        font-size: 0.8em;
+      }
+
+
+      #overview-section {
+        padding-top: 70px; 
+      }
+
+      .insights-table { 
+        font-size: 0.8em; 
+      }
+
+      h2, #overview-heading, #rebrand-section h2 { 
+        font-size: 1.25em; 
+      }
+
+      #dashboards-section h2 {
+        margin-bottom: 0px; 
+      }
+
+      .dashboard-col {
+        margin-top: 0px;
+        padding: 0px;
+      }
+
+      .insights-table th { 
+        font-size: 1.25em; 
+      }
     }
   </style>
 </head>
@@ -323,7 +332,7 @@
     <div id="overview-section">
       <h2 id="overview-heading">Overview</h2>
       <p style="margin-top: 30px;">BBSTORE'S is a women's fashion brand in Vietnam focused on elegance and minimalism, targeting women aged 25–34 with higher incomes and modern lifestyles who value quality and individuality. The brand is seeking opportunities to improve and grow in fashion retail, particularly in boosting in-store sales revenue.</p>
-      <p>Data from 01/01/2024–05/26/2024 was collected and stored in an Excel file with two sheets:</p>
+      <p>Data from 01/01/2024-05/26/2024 was provided and stored in an Excel file with two sheets:</p>
       <ul>
         <li><em>Daily Sales:</em> each row shows sales data for a single day.</li>
         <li><em>Transaction Data:</em> each row represents an individual transaction; multiple transactions may occur per day.</li>
