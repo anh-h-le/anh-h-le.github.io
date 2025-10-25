@@ -15,7 +15,7 @@ body {
 h1 {
     margin: auto;
     color: #d8e9f2;
-    font-family: Tahoma;
+    font-family: Tahoma, Lexend, sans-serif;
     font-weight: bold;
 }
 
@@ -56,7 +56,7 @@ h1 {
 }
 
 h2 {
-    font-family: Tahoma;
+    font-family: Tahoma, Lexend, sans-serif;
     font-size: 2.25em;
     color: #d8e9f2;
 }
