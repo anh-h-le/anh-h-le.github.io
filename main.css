@@ -102,6 +102,10 @@ h2 {
 }
 
 @media (max-width: 600px) {
+    h2 {
+        font-size: 1.5em;
+    }
+    
     #main-buttons {
         font-size: 0.8em;
         /* flex-direction: column; */
