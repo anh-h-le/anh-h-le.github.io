@@ -49,7 +49,7 @@
     }
 
     h1 {
-      font-size: 5em;
+      font-size: 4.5em;
     }
 
     #collage {
@@ -213,7 +213,6 @@
       }
 
       h2, #overview-heading, #base-heading {
-        width: 90%;
         font-size: 1.5em;
         line-height: 1.5em;
       }
@@ -246,23 +245,11 @@
 
     <div id="overview-section">
       <h2 id="overview-heading">Overview</h2>
-      <p style="margin-top: 30px;">The objective of the group project for BUAD 313 (Advanced Operations Management
-        and Analytics) was to create a base model implementing simple requirements, critique the limitations of
-        the base model, and build a revised model with improvements.</p>
+      <p style="margin-top: 30px;">The BUAD 313 (Advanced Operations Management and Analytics) group project aimed to develop a base optimization model for playlist generation, evaluate its limitations, and design an improved version addressing those issues.</p>
       <p>Data description:</p>
         <div id="data-description">
         <ul>
-            <li><em>artists.csv:</em></li>
-            <ul>
-            <li>taken from Kaggle</li>
-            <li>combines information from two sources:
-                <ul>
-                <li>MusicBrainz: an open, free database of musical metadata</li>
-                <li>Last.fm: a music tracking platform that provides user engagement information</li>
-                <li>contains musical artists' names, tags, and popularity (listeners/scrobbles)</li>
-                </ul>
-            </li>
-            </ul>
+            <li><em>artists.csv:</em> sourced from Kaggle, combining data from MusicBrainz and Last.fm, including artist names, tags, and popularity metrics (listeners/scrobbles)</li>
             <li><em>songs_with_predictions_small.csv:</em> 18 users and 19,939 songs (after removing duplicates)
             <ul>
                 <li>song title and artist name</li>
@@ -346,7 +333,7 @@
     <div id="revised-model">
       <h2 id="revised-heading">Revised Model</h2>
       <p style="margin-top: 30px;">Select 30 tracks to maximize user rating, while maintaining artist uniqueness and introducing diversity constraints (country, tag, and unrated songs).</p>
-      <p>The revised model addresses the base model’s limitations by adding diversity and customization constraints, ensuring playlists include new, varied songs across countries and tags while still aligning with user preferences.</p>
+      <p>The revised model addresses the base model's limitations by adding diversity and customization constraints, ensuring playlists include new, varied songs across countries and tags while still aligning with user preferences.</p>
 
       <p>Formulation:</p>
       <ul>
@@ -430,22 +417,22 @@
 
     <div id="sensitivity">
       <h2>Sensitivity and Robustness Analysis</h2>
-      <p>We conducted sensitivity analysis by adding pertubations to the predicted ratings or on key parameters:</p>
+      <p>We tested model sensitivity by introducing perturbations to predicted ratings or key parameters:</p>
       <div id="parameters">
         <ul>
-            <li>adding "noise" to predicted ratings: model becomes infeasible.</li>
-            <li>playlist length: the objective value decreases as the playlist length increases within the allowable range.</li>
-            <li>artist limit: the objective value increases as the number of artists in the playlist increases within the allowable range.</li>
-            <li>unrated limit: the objective value increases as the number of unrated songs increases within the allowable range.</li>
-            <li>country limit: the objective value increases as the country limit reaches 10, but then levels off thereafter.</li>
-            <li>tag limit: the objective value increases as the tag limit increases within the allowable range.</li>
+            <li>predicted ratings: model becomes infeasible when noise is added.</li>
+            <li>playlist length: objective value decreases as the playlist length increases.</li>
+            <li>artist limit: objective value increases as the number of artists in the playlist increases.</li>
+            <li>unrated limit: objective value increases as the number of unrated songs increases.</li>
+            <li>country limit: objective value increases as the country limit reaches 10, but then levels off thereafter.</li>
+            <li>tag limit: objective value increases as the tag limit increases.</li>
         </ul>
       </div>
-      <p>Key Findings on Sensitivity and Robustness:</p>
-      <div id-="findings">
+      <p>Key findings:</p>
+      <div id="findings">
         <ul>
             <li>Adding constraints would create a trade-off between diversity improvement and rating maximization: lower optimal value than that of the base model.</li>
-            <li>More constraints and extended dataset: longer processing and optimizing time, which is not appropriate for real-world applications.</li>
+            <li>More constraints and extended dataset: longer processing and optimizing time.</li>
             <li>When predicted ratings change, the model becomes infeasible since the unpopular, unrated songs now have non-zero ratings, and the unrated limit constraint is not met.</li>
         </ul>
       </div>
@@ -455,12 +442,12 @@
     <div id="recs">
         <h2>Recommendations and Implications</h2>
         <div id="recs-list">
-        <ol>
-            <li>Set up a model that could check for the number of unrated songs available before setting the unrated limit (to know if we should turn on or off the constraint or adjust the limit) to make sure the model is feasible when noise is added.</li>
-            <li>Allow users to define a playlist length based on either songs or minutes, which include gathering more data on song durations from Spotify.</li>
-            <li>Implement a machine learning system that could group the songs into clusters/themes based on tags and allow for selecting songs based on user's genre preferences.</li>
-            <li>Introduce a multi-objective optimization function to assign different weights for different factors instead of maximizing solely user's ratings.</li>
-        </ol>
+            <ol>
+                <li>Add a model check for available unrated songs before setting limits to ensure feasibility when noise is introduced.</li>
+                <li>Let users choose playlist length by number of songs or total duration, using additional Spotify data on track lengths.</li>
+                <li>Apply machine learning to cluster songs by tags or themes, enabling personalized, genre-based playlist creation.</li>
+                <li>Enhance the model with a multi-objective function that balances multiple factors instead of focusing solely on user ratings.</li>
+            </ol>
         </div>
     </div>
 
