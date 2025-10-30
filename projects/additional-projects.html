@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anh Le | Additional Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Anh Le, USC, Business Intelligence Intern, Business Student">
+    <meta name="description" content="Custom Spotify Playlist Design Group Project">
+    <title>Anh Le | Custom Playlist Design</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Code">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .veil {
+            height: 30%;
+        }
+
+        #header {
+            background-image: url('img/futuristic.jpg');
+            background-position: top center;
+            background-size: 60%;
+            padding-top: 350px;
+            padding-bottom: 350px;
+            overflow: visible;
+        }
+
+        h1 {
+            font-size: 5em;
+        }
+
+        #collage {
+            position: absolute;
+            bottom: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            z-index: 3;
+            flex-wrap: nowrap;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .collage-item {
+            width: 350px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 8px rgb(10, 85, 142);
+            height: auto;
+        }
+
+        #sunroof-proj {
+            margin: 0 auto;
+            width: 1100px;
+            color: rgb(10, 85, 142);
+            font-family: 'Google Sans Code';
+            padding-top: 230px;
+            font-size: 1em;
+            line-height: 1.5em;
+        }
+
+        #seoul-bike {
+            margin: 0 auto;
+            width: 1100px;
+            margin-top: 80px;
+            font-family: 'Google Sans Code';
+            font-size: 1em;
+            line-height: 1.5em;
+            color: white;
+        }
+
+        #sunroof-heading {
+            font-family: Tahoma, Lexend, sans-serif;
+            color: #0a66c2;
+            font-size: 2.25em;
+        }
+
+        /* #sunroof-img {
+            width: 500px;
+            float: right;
+            margin: 20px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        #bike-img {
+            width: 500px;
+            float: left;
+            margin: 20px 20px 20px 0px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        } */
+
+        #sunroof-dashboard {
+            width: 90%;
+            margin: auto;
+            display: block;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        #bike-heading {
+            font-family: Tahoma, Lexend, sans-serif;
+            font-size: 2.25em;
+            color: #d8e9f2;
+        }
+
+        h2 {
+            line-height: 2em;
+        }
+
+        h3 {
+            font-family: Tahoma, Lexend, sans-serif;
+        }
+
+        #source-link {
+            text-decoration: none;
+            color: white;
+        }
+
+        #source-link:hover {
+            color: #d8e9f2;
+        }
+
+        .visual {
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: block;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 1100px) {
+
+            #sunroof-proj,
+            #seoul-bike {
+                width: 90%;
+            }
+
+            .collage-item {
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                font-size: 1em;
+                text-align: center;
+            }
+
+            h1,
+            h2 {
+                text-align: center;
+                line-height: auto;
+            }
+
+            #sunroof-proj,
+            #seoul-bike {
+                text-align: center;
+            }
+
+            .bullets {
+                text-align: left;
+            }
+
+            #header {
+                padding-top: 200px;
+                padding-bottom: 50px;
+            }
+
+            h1 {
+                font-size: 3.5em;
+            }
+
+            .collage-item:first-child,
+            .collage-item:last-child {
+                display: none;
+            }
+
+            #collage {
+                position: static;
+                margin-top: 60px;
+                transform: none;
+            }
+
+            .collage-item {
+                width: 300px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            #sunroof-proj {
+                padding-top: 80px;
+            }
+
+            #sunroof-dashboard/*,
+            #bike-img*/ {
+                width: 100%;
+            }
+
+            /* #sunroof-img,
+            #bike-img {
+                display: none;
+            } */
+
+            .visual {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 1.8em;
+                line-height: 2em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            #header {
+                padding-top: 160px;
+                padding-bottom: 50px;
+            }
+
+            .collage-item {
+                width: 70%;
+            }
+
+            #sunroof-proj,
+            #seoul-bike {
+                font-size: 0.8em;
+            }
+
+            #sunroof-proj {
+                padding-top: 70px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                line-height: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div id="header">
+            <h1>Additional Data Analytics Projects</h1>
+            <div class="veil"></div>
+
+            <div id="main-buttons">
+                <p><a href="https://anh-h-le.github.io/index.html" class="link"><strong>Home</strong></a></p>
+                <p><a href="overview.html" class="link"><strong>Projects</strong></a></p>
+            </div>
+
+            <div id="collage">
+                <img class="collage-item" src="img/additional-projects/machine-learning.jpg" alt="Machine Learning">
+                <img class="collage-item" src="img/additional-projects/data-visualization.jpeg"
+                    alt="Data Visualization">
+                <img class="collage-item" src="img/additional-projects/business-data.jpg" alt="Business Data">
+            </div>
+        </div>
+
+        <div id="sunroof-proj">
+            <h2 id="sunroof-heading">Google's Project Sunroof Data Querying and Visualization</h2>
+            <div class="overview-section">
+                <h3>Overview</h3>
+                <p>The TAC 249 (Introduction to Data Analytics) project aimed at demonstrating familiarity with data
+                    analytics and visualization software and languages through analyzing the Google's Project Sunroof
+                    data.</p>
+                <!-- <img id="sunroof-img" src="img/additional-projects/sunroof.jpg" alt="Project Sunroof"> -->
+                <p>Data description:</p>
+                <div class="bullets">
+                    <ul>
+                        <li><em>project-sunroof-state.csv:</em> aggregated U.S. state-level solar potential data,
+                            including building counts, qualification rates, and total sunlight generation estimates from
+                            Project Sunroof.</li>
+                        <li><em>region lookup table.csv:</em> reference table mapping each U.S. state to its
+                            corresponding region.</li>
+                    </ul>
+                </div>
+                <p>Tools: MySQL Workbench (SQL), MongoDB (NoSQL), Tableau.</p>
+            </div>
+            <div>
+                <h3>Part 1: Data Querying with MySQL</h3>
+                <div class="bullets">
+                    <ul>
+                        <li>Imported the datasets into the database by creating two destination tables with primary keys
+                            and
+                            attributes.</li>
+                        <li>Queried the data using SQL, including joins, unions, subqueries, and functions, to explore
+                            highest-value entries and summary statistics.</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h3>Part 2: Data Querying with MongoDB</h3>
+                <div class="bullets">
+                    <ul>
+                        <li>Exported the resulting table from joining two tables in part 1 as a JSON file and imported
+                            the
+                            file into MongoDB.</li>
+                        <li>Queried the data using MongoDB Query Language (MQL) to retrive aggregated data based on
+                            regions,
+                            states, or roof orientations.</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h3>Part 3: Data Visualization with Tableau</h3>
+                <img id="sunroof-dashboard" src="img/additional-projects/sunroof-dashboard.jpg"
+                    alt="Project Sunroof Dashboard">
+            </div>
+        </div>
+
+        <div id="seoul-bike">
+            <h2 id="bike-heading">Seoul's Bike Rentals Data Visualization and Machine Learning</h2>
+            <!-- <img id="bike-img" src="img/additional-projects/bike-rental.jpg" alt="Bikes for Rent"> -->
+            <div class="overview-section">
+                <h3>Overview</h3>
+                <p>The TAC 216 (Applied Python) final project required creating a program to manipulate and visualize a
+                    Big Data dataset, showcasing skills in scientific computing, machine learning, and data
+                    visualization.</p>
+                <p>Data description: <em>seoul_bike_sharing.csv</em></p>
+                <div class="bullets">
+                    <ul>
+                        <li>Source: <a id="source-link"
+                                href="https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand"
+                                target="_blank">UC Irvine Machine Learning Repository</a></li>
+                        <li>Period: 12/01/2017-11/30/2018</li>
+                        <li>Contains data about date, hour, weather, season, whether it was a holiday, and whether it
+                            was a functioning day.</li>
+                    </ul>
+                </div>
+                <p>Tools: Python (pandas, numpy, matplotlib, scikit-learn, sqlite3).</p>
+            </div>
+
+            <div>
+                <div>
+                    <h3>Data Integration and Cleaning</h3>
+                    <div class="bullets">
+                        <ul>
+                            <li>Loaded and stored data in SQLite, ensuring unique (date-hour) records and a reproducible
+                                ETL pipeline.</li>
+                            <li>Cleaned and standardized data using Pandas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Interactive Exploration and Visualization</h3>
+                    <div class="bullets">
+                        <ul>
+                            <li>Built a menu-driven interface that lets users select visualization options dynamically.</li>
+                            <li>Used Matplotlib to generate visualizations:</li>
+                            <ul>
+                                <li>Average hourly rentals.</li>
+                                <li>Rentals by season.</li>
+                                <li>Rentals on holidays vs. non-holidays</li>
+                                <li>Daily rental trends over the year.</li>
+                            </ul>
+                        </ul>
+                        <img class="visual" src="img/additional-projects/avg-hourly-rentals.png" alt="Average Hourly Rentals">
+                        <img class="visual" src="img/additional-projects/avg-rentals-season.png" alt="Average Hourly Rentals by Season">
+                        <img class="visual" src="img/additional-projects/avg-rentals-holiday.png" alt="Average Hourly Rentals by Whether It's a Holiday">
+                        <img class="visual" src="img/additional-projects/daily-rentals.png" alt="Daily rental trends over the year">
+
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Predictive Modeling</h3>
+                    <div class="bullets">
+                        <ul>
+                            <li>Trained an MLP classifier to predict seasons from weather data and evaluated with confusion matrix and classification report.</li>
+                        </ul>
+                    </div>
+                    <img class="visual" src="img/additional-projects/conf-matrix.png">
+                    <table style="text-align: center; margin: auto;">
+                        <caption>Classification Report</caption>
+                        <thead">
+                            <tr>
+                                <th scope="col" style="text-align:left;">Class</th>
+                                <th scope="col">precision</th>
+                                <th scope="col">recall</th>
+                                <th scope="col">f1-score</th>
+                                <th scope="col">support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" style="text-align:left;">Autumn</th>
+                                <td>0.65</td>
+                                <td>0.53</td>
+                                <td>0.59</td>
+                                <td>485</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="text-align:left;">Spring</th>
+                                <td>0.70</td>
+                                <td>0.65</td>
+                                <td>0.67</td>
+                                <td>540</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="text-align:left;">Summer</th>
+                                <td>0.81</td>
+                                <td>0.89</td>
+                                <td>0.85</td>
+                                <td>552</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="text-align:left;">Winter</th>
+                                <td>0.86</td>
+                                <td>0.97</td>
+                                <td>0.91</td>
+                                <td>540</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="text-align:left;">accuracy</th>
+                                <td></td>
+                                <td></td>
+                                <td>0.77</td>
+                                <td>2117</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="text-align:left;">macro avg</th>
+                                <td>0.75</td>
+                                <td>0.76</td>
+                                <td>0.76</td>
+                                <td>2117</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="text-align:left;">weighted avg</th>
+                                <td>0.76</td>
+                                <td>0.77</td>
+                                <td>0.76</td>
+                                <td>2117</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="bullets">
+                        <ul>
+                            <li>Built a linear regression model to predict rental counts from time and weather and analyzed via R² and actual versus predicted plots.</li>
+                        </ul>
+                    </div>
+                    <img class="visual" src="img/additional-projects/linear-regression.png">
+                </div>
+            </div>
+            <div id="footer">
+                <p>Thank you for visiting.</p>
+                <p>Anh Le - 2025</p>
+                <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank" class="button"><i
+                        class="fa fa-linkedin-square"></i></a>
+                <p>Email: <a href="mailto:anhle.ahl@gmail.com" class="link">anhle.ahl@gmail.com</a></p>
+            </div>
+        </div>
+</body>
+
+</html>

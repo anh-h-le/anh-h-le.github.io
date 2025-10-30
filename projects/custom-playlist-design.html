@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,7 @@
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['\\[','\\]'], ['$$','$$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
         displayAlign: 'center',
         displayIndent: '0'
       },
@@ -44,7 +45,7 @@
       background-position: top center;
       background-size: 60%;
       padding-top: 300px;
-      padding-bottom: 300px;
+      padding-bottom: 310px;
       overflow: visible;
     }
 
@@ -84,13 +85,17 @@
       line-height: 1.5em;
     }
 
-    #overview-heading, #base-heading {
+    #overview-heading,
+    #base-heading {
       font-family: Tahoma, Lexend, sans-serif;
       color: #0a66c2;
       font-size: 2.25em;
     }
 
-    #base-model, #revised-model, #sensitivity, #recs {
+    #base-model,
+    #revised-model,
+    #sensitivity,
+    #recs {
       margin: 0 auto;
       width: 1100px;
       margin-top: 80px;
@@ -103,7 +108,8 @@
     mjx-container[jax="SVG"] {
       display: block;
       text-align: center;
-      font-size: 1em;         /* consistent across all equations */
+      font-size: 1em;
+      /* consistent across all equations */
       overflow-x: auto;
       overflow-y: hidden;
       padding: 0.5em 0;
@@ -122,16 +128,23 @@
     }
 
     #graphs {
-        width: 100%;
-        display: block;
-        margin: auto;
+      width: 90%;
+      display: block;
+      margin: auto;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
     }
 
     /* Responsive layout */
     @media (max-width: 1100px) {
-      #overview-section, #base-model, #revised-model, #sensitivity, #recs {
+
+      #overview-section,
+      #base-model,
+      #revised-model,
+      #sensitivity,
+      #recs {
         width: 90%;
       }
+
       .collage-item {
         width: 300px;
       }
@@ -143,15 +156,23 @@
         text-align: center;
       }
 
-      h1, h2 {
+      h1,
+      h2 {
         text-align: center;
       }
 
-      #overview-section, #base-model, #revised-model, #sensitivity, #recs {
+      #overview-section,
+      #base-model,
+      #revised-model,
+      #sensitivity,
+      #recs {
         text-align: center;
       }
 
-      #data-description, #parameters, #recs-list, #findings {
+      #data-description,
+      #parameters,
+      #recs-list,
+      #findings {
         text-align: left;
       }
 
@@ -164,7 +185,8 @@
         font-size: 3.5em;
       }
 
-      .collage-item:first-child, .collage-item:last-child {
+      .collage-item:first-child,
+      .collage-item:last-child {
         display: none;
       }
 
@@ -184,7 +206,9 @@
         padding-top: 80px;
       }
 
-      h2, #overview-heading, #base-heading {
+      h2,
+      #overview-heading,
+      #base-heading {
         font-size: 1.8em;
         line-height: 2em;
       }
@@ -204,7 +228,11 @@
         width: 70%;
       }
 
-      #overview-section, #base-model, #revised-model, #sensitivity, #recs {
+      #overview-section,
+      #base-model,
+      #revised-model,
+      #sensitivity,
+      #recs {
         font-size: 0.8em;
       }
 
@@ -212,7 +240,9 @@
         padding-top: 70px;
       }
 
-      h2, #overview-heading, #base-heading {
+      h2,
+      #overview-heading,
+      #base-heading {
         font-size: 1.5em;
         line-height: 1.5em;
       }
@@ -245,25 +275,30 @@
 
     <div id="overview-section">
       <h2 id="overview-heading">Overview</h2>
-      <p style="margin-top: 30px;">The BUAD 313 (Advanced Operations Management and Analytics) group project aimed to develop a base optimization model for playlist generation, evaluate its limitations, and design an improved version addressing those issues.</p>
+      <p style="margin-top: 30px;">The BUAD 313 (Advanced Operations Management and Analytics) group project aimed to
+        develop a base optimization model for playlist generation, evaluate its limitations, and design an improved
+        version addressing those issues.</p>
       <p>Data description:</p>
-        <div id="data-description">
+      <div id="data-description">
         <ul>
-            <li><em>artists.csv:</em> sourced from Kaggle, combining data from MusicBrainz and Last.fm, including artist names, tags, and popularity metrics (listeners/scrobbles)</li>
-            <li><em>songs_with_predictions_small.csv:</em> 18 users and 19,939 songs (after removing duplicates)
+          <li><em>artists.csv:</em> sourced from Kaggle, combining data from MusicBrainz and Last.fm, including artist
+            names, tags, and popularity metrics (listeners/scrobbles).</li>
+          <li><em>songs_with_predictions_small.csv:</em> 18 users and 19,939 songs (after removing duplicates).
             <ul>
-                <li>song title and artist name</li>
-                <li>a predicted score for each user, with 0 indicating few or no listens</li>
-                <li>an average score across all users</li>
+              <li>song title and artist name.</li>
+              <li>a predicted score for each user, with 0 indicating few or no listens.</li>
+              <li>an average score across all users.</li>
             </ul>
-            </li>
+          </li>
         </ul>
-        </div>
+      </div>
+      <p">Tools: Python, Gurobi Optimizer, Github Copilot.</p>
     </div>
 
     <div id="base-model">
       <h2 id="base-heading">Base Model</h2>
-      <p style="margin-top: 30px;">Select 30 tracks to maximize the target user's total rating, with at most one song per artist.</p>
+      <p style="margin-top: 30px;">Select 30 tracks to maximize the target user's total rating, with at most one song
+        per artist.</p>
       <p>Formulation:</p>
       <ul>
         <li>
@@ -320,7 +355,8 @@
             \sum_{i \in \textbf{tracks}} x_i = 30 \quad \text{(Playlist length)}
             \]
             \[
-            \sum_{i \in \textbf{artist_songs}_a} x_i \le 1 \quad \forall a \in \textbf{unique_artists} \quad \text{(Artist uniqueness)}
+            \sum_{i \in \textbf{artist_songs}_a} x_i \le 1 \quad \forall a \in \textbf{unique_artists} \quad
+            \text{(Artist uniqueness)}
             \]
             \[
             x_i \in \{0,1\} \quad \forall i \in \textbf{tracks}
@@ -332,65 +368,68 @@
 
     <div id="revised-model">
       <h2 id="revised-heading">Revised Model</h2>
-      <p style="margin-top: 30px;">Select 30 tracks to maximize user rating, while maintaining artist uniqueness and introducing diversity constraints (country, tag, and unrated songs).</p>
-      <p>The revised model addresses the base model's limitations by adding diversity and customization constraints, ensuring playlists include new, varied songs across countries and tags while still aligning with user preferences.</p>
+      <p style="margin-top: 30px;">Select 30 tracks to maximize user rating, while maintaining artist uniqueness and
+        introducing diversity constraints (country, tag, and unrated songs).</p>
+      <p>The revised model addresses the base model's limitations by adding diversity and customization constraints,
+        ensuring playlists include new, varied songs across countries and tags while still aligning with user
+        preferences.</p>
 
       <p>Formulation:</p>
       <ul>
         <li>
-            Index Sets
-            <div class="math">
-                \[
-                \begin{aligned}
-                &\textbf{tracks } = \text{ list of tracks from the merged dataset (left-merge of }
-                \texttt{songs_with_predictions_small.csv} \text{ and } \texttt{artists.csv})
-                \text{ after cleaning } (\text{total number of tracks} = 19{,}939)\\
-                &\textbf{unique_artists } = \text{ list of unique artists from the merged dataset}\\
-                &\textbf{unique_countries } = \text{ list of unique countries from the merged dataset}\\
-                &\textbf{unique_tags } = \text{ list of unique tags from the merged dataset}\\
-                &\textbf{unrated_songs } = \text{ list of songs that the target user has not rated}
-                \end{aligned}
-                \]
-            </div>
+          Index Sets
+          <div class="math">
+            \[
+            \begin{aligned}
+            &\textbf{tracks } = \text{ list of tracks from the merged dataset (left-merge of }
+            \texttt{songs_with_predictions_small.csv} \text{ and } \texttt{artists.csv})
+            \text{ after cleaning } (\text{total number of tracks} = 19{,}939)\\
+            &\textbf{unique_artists } = \text{ list of unique artists from the merged dataset}\\
+            &\textbf{unique_countries } = \text{ list of unique countries from the merged dataset}\\
+            &\textbf{unique_tags } = \text{ list of unique tags from the merged dataset}\\
+            &\textbf{unrated_songs } = \text{ list of songs that the target user has not rated}
+            \end{aligned}
+            \]
+          </div>
         </li>
 
         <li>
-            Indexed Data
-            <div class="math">
-                \[
-                \begin{aligned}
-                &\textbf{artist_songs}_a = \text{tracks by artist } a, \quad \forall a \in
-                \textbf{unique_artists}\\
-                &\textbf{country_songs}_c = \text{tracks from country } c, \quad \forall c \in
-                \textbf{unique_countries}\\
-                &\textbf{tag_songs}_t = \text{tracks with tag } t, \quad \forall t \in \textbf{unique_tags}\\
-                &r_i = \text{target user's rating for track } i, \quad \forall i \in \textbf{tracks}
-                \end{aligned}
-                \]
-            </div>
+          Indexed Data
+          <div class="math">
+            \[
+            \begin{aligned}
+            &\textbf{artist_songs}_a = \text{tracks by artist } a, \quad \forall a \in
+            \textbf{unique_artists}\\
+            &\textbf{country_songs}_c = \text{tracks from country } c, \quad \forall c \in
+            \textbf{unique_countries}\\
+            &\textbf{tag_songs}_t = \text{tracks with tag } t, \quad \forall t \in \textbf{unique_tags}\\
+            &r_i = \text{target user's rating for track } i, \quad \forall i \in \textbf{tracks}
+            \end{aligned}
+            \]
+          </div>
         </li>
 
         <li>
-            Decision Variables
-            <div class="math">
-                \[
-                x_i =
-                \begin{cases}
-                1, & \text{if track } i \text{ is selected for the playlist}\\
-                0, & \text{otherwise}
-                \end{cases}
-                \qquad \forall i \in \textbf{tracks}
-                \]
-            </div>
+          Decision Variables
+          <div class="math">
+            \[
+            x_i =
+            \begin{cases}
+            1, & \text{if track } i \text{ is selected for the playlist}\\
+            0, & \text{otherwise}
+            \end{cases}
+            \qquad \forall i \in \textbf{tracks}
+            \]
+          </div>
         </li>
 
         <li>
-            Objective
-            <div class="math">
-                \[
-                \max \quad \sum_{i \in \textbf{tracks}} r_i\, x_i
-                \]
-            </div>
+          Objective
+          <div class="math">
+            \[
+            \max \quad \sum_{i \in \textbf{tracks}} r_i\, x_i
+            \]
+          </div>
         </li>
         <li>
           Constraints
@@ -399,16 +438,19 @@
             \sum_{i \in \textbf{tracks}} x_i = 30 \quad \text{(Playlist length)}
             \]
             \[
-            \sum_{i \in \textbf{artist_songs}_a} x_i \le 1 \quad \forall a \in \textbf{unique_artists} \quad \text{(Artist uniqueness)}
+            \sum_{i \in \textbf{artist_songs}_a} x_i \le 1 \quad \forall a \in \textbf{unique_artists} \quad
+            \text{(Artist uniqueness)}
             \]
             \[
             \sum_{i \in \textbf{unrated_songs}} x_i = 5 \quad \text{(Exactly 5 unrated tracks)}
             \]
             \[
-            \sum_{i \in \textbf{country_songs}_c} x_i \le 10 \quad \forall c \in \textbf{unique_countries} \quad \text{(Country limit)}
+            \sum_{i \in \textbf{country_songs}_c} x_i \le 10 \quad \forall c \in \textbf{unique_countries} \quad
+            \text{(Country limit)}
             \]
             \[
-            \sum_{i \in \textbf{tag_songs}_t} x_i \le 10 \quad \forall t \in \textbf{unique_tags} \quad \text{(Tag limit)}
+            \sum_{i \in \textbf{tag_songs}_t} x_i \le 10 \quad \forall t \in \textbf{unique_tags} \quad \text{(Tag
+            limit)}
             \]
           </div>
         </li>
@@ -420,43 +462,52 @@
       <p>We tested model sensitivity by introducing perturbations to predicted ratings or key parameters:</p>
       <div id="parameters">
         <ul>
-            <li>predicted ratings: model becomes infeasible when noise is added.</li>
-            <li>playlist length: objective value decreases as the playlist length increases.</li>
-            <li>artist limit: objective value increases as the number of artists in the playlist increases.</li>
-            <li>unrated limit: objective value increases as the number of unrated songs increases.</li>
-            <li>country limit: objective value increases as the country limit reaches 10, but then levels off thereafter.</li>
-            <li>tag limit: objective value increases as the tag limit increases.</li>
+          <li>predicted ratings: model becomes infeasible when noise is added.</li>
+          <li>playlist length: objective value decreases as the playlist length increases.</li>
+          <li>artist limit: objective value increases as the number of artists in the playlist increases.</li>
+          <li>unrated limit: objective value increases as the number of unrated songs increases.</li>
+          <li>country limit: objective value increases as the country limit reaches 10, but then levels off thereafter.
+          </li>
+          <li>tag limit: objective value increases as the tag limit increases.</li>
         </ul>
       </div>
       <p>Key findings:</p>
       <div id="findings">
         <ul>
-            <li>Adding constraints would create a trade-off between diversity improvement and rating maximization: lower optimal value than that of the base model.</li>
-            <li>More constraints and extended dataset: longer processing and optimizing time.</li>
-            <li>When predicted ratings change, the model becomes infeasible since the unpopular, unrated songs now have non-zero ratings, and the unrated limit constraint is not met.</li>
+          <li>Adding constraints would create a trade-off between diversity improvement and rating maximization: lower
+            optimal value than that of the base model.</li>
+          <li>More constraints and extended dataset: longer processing and optimizing time.</li>
+          <li>When predicted ratings change, the model becomes infeasible since the unpopular, unrated songs now have
+            non-zero ratings, and the unrated limit constraint is not met.</li>
         </ul>
       </div>
       <img id="graphs" src="img/custom-playlist-design/sensitivity-analysis.png" alt="Sensitivity Analysis Graphs">
     </div>
 
     <div id="recs">
-        <h2>Recommendations and Implications</h2>
-        <div id="recs-list">
-            <ol>
-                <li>Add a model check for available unrated songs before setting limits to ensure feasibility when noise is introduced.</li>
-                <li>Let users choose playlist length by number of songs or total duration, using additional Spotify data on track lengths.</li>
-                <li>Apply machine learning to cluster songs by tags or themes, enabling personalized, genre-based playlist creation.</li>
-                <li>Enhance the model with a multi-objective function that balances multiple factors instead of focusing solely on user ratings.</li>
-            </ol>
-        </div>
+      <h2>Recommendations and Implications</h2>
+      <div id="recs-list">
+        <ol>
+          <li>Add a model check for available unrated songs before setting limits to ensure feasibility when noise is
+            introduced.</li>
+          <li>Let users choose playlist length by number of songs or total duration, using additional Spotify data on
+            track lengths.</li>
+          <li>Apply machine learning to cluster songs by tags or themes, enabling personalized, genre-based playlist
+            creation.</li>
+          <li>Enhance the model with a multi-objective function that balances multiple factors instead of focusing
+            solely on user ratings.</li>
+        </ol>
+      </div>
     </div>
 
     <div id="footer">
       <p>Thank you for visiting.</p>
       <p>Anh Le - 2025</p>
-      <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank" class="button"><i class="fa fa-linkedin-square"></i></a>
+      <a href="https://www.linkedin.com/in/anhle-uscbuad/" target="_blank" class="button"><i
+          class="fa fa-linkedin-square"></i></a>
       <p>Email: <a href="mailto:anhle.ahl@gmail.com" class="link">anhle.ahl@gmail.com</a></p>
     </div>
   </div>
 </body>
+
 </html>
