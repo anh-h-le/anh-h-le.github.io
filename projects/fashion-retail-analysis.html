@@ -72,6 +72,33 @@
       font-size: 2.25em;
     }
 
+    #impact {
+      background-color: #f0f7ff;
+      padding: 20px 25px;
+      border-left: 6px solid #0a66c2;
+      margin-top: 25px;
+      border-radius: 6px;
+      font-family: 'Google Sans Code', sans-serif;
+      line-height: 1.5em;
+      box-shadow: 0 0 8px rgba(10, 85, 142, 0.15);
+    }
+
+    #impact h3 {
+      color: rgb(10, 85, 142);
+      font-family: Tahoma, Lexend, sans-serif;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    #impact p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    .bullets {
+      text-align: left;
+    }
+
     #dashboards-section {
       margin: 0 auto;
       width: 1100px;
@@ -222,6 +249,10 @@
         text-align: center;
       }
 
+      #to-be-hidden {
+        display: none;
+      }
+
       #steps {
         text-align: left;
         display: inline-block;
@@ -362,16 +393,25 @@
 
     <div id="overview-section">
       <h2 id="overview-heading">Overview</h2>
-      <p style="margin-top: 30px;">BBSTORE'S is a women's fashion brand in Vietnam focused on elegance and minimalism,
-        targeting women aged 25-34 with higher incomes and modern lifestyles who value quality and individuality. The
-        brand is seeking opportunities to improve and grow in fashion retail, particularly in boosting in-store sales
-        revenue.</p>
-      <p>Data from 01/01/2024-05/26/2024 was provided and stored in an Excel file with two sheets:</p>
-      <ul>
-        <li><em>Daily Sales:</em> each row shows sales data for a single day.</li>
-        <li><em>Transaction Data:</em> each row represents an individual transaction; multiple transactions may occur
-          per day.</li>
-      </ul>
+      <p id="to-be-hidden" style="margin-top: 30px;">BBSTORE'S is a women's fashion brand in Vietnam focused on elegance and minimalism,
+        targeting women aged 25-34 with modern lifestyles who value quality and individuality.</p>
+      <div id="impact">
+        <h3>Business Impact</h3>
+        <p>
+          The analysis project identifies strategic opportunities for <strong>sales growth, customer retention,</strong>
+          and <strong>product mix optimization</strong>.
+          By focusing on weekday promotions, category realignment, and tiered pricing strategies,
+          the project demonstrates how data-driven insights can improve
+          <strong>revenue stability and brand positioning</strong> in Vietnam's competitive fashion market.
+        </p>
+      </div>
+      <p>Data from 01/01/2024-05/26/2024 was provided with two sheets:</p>
+      <div class="bullets">
+        <ul>
+          <li><em>Daily Sales:</em> each row shows sales data for a single day.</li>
+          <li><em>Transaction Data:</em> each row represents an individual transaction; multiple transactions may occur per day.</li>
+        </ul>
+      </div>
       <p>Tools: Microsoft Excel, Power BI, Microsoft PowerPoint.</p>
     </div>
 
@@ -405,7 +445,7 @@
             <td>
               <strong>Promotions on Mon-Wed:</strong>
               <ul>
-                <li>5–10% off or B1G1 on accessories.</li>
+                <li>5-10% off or B1G1 on accessories.</li>
                 <li>Discount on lowest-priced item in multi-buy.</li>
                 <li>Midday flash sales first Mon/Tue/Wed monthly.</li>
               </ul>

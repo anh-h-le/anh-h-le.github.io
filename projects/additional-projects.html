@@ -96,6 +96,29 @@
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
         } */
 
+        .impact {
+        background-color: #f0f7ff;
+        padding: 20px 25px;
+        border-left: 6px solid #0a66c2;
+        margin-top: 25px;
+        border-radius: 6px;
+        font-family: 'Google Sans Code', sans-serif;
+        line-height: 1.5em;
+        box-shadow: 0 0 8px rgba(10, 85, 142, 0.15);
+        }
+
+        .impact h3 {
+        color: rgb(10, 85, 142);
+        font-family: Tahoma, Lexend, sans-serif;
+        margin-top: 0;
+        margin-bottom: 10px;
+        }
+
+        .impact p {
+        margin: 0;
+        font-size: 1em;
+        }
+
         #sunroof-dashboard {
             width: 90%;
             margin: auto;
@@ -132,6 +155,19 @@
             margin-bottom: 20px;
             display: block;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        #graphs {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        #graphs img {
+            width: 30%;
         }
 
         @media (max-width: 1100px) {
@@ -215,6 +251,14 @@
                 font-size: 1.8em;
                 line-height: 2em;
             }
+
+            #graphs {
+                width: 100%;
+            }
+
+            #graphs img {
+                width: 45%;
+            }
         }
 
         @media (max-width: 600px) {
@@ -268,13 +312,18 @@
         </div>
 
         <div id="sunroof-proj">
-            <h2 id="sunroof-heading">Google's Project Sunroof Data Querying and Visualization</h2>
+            <h2 id="sunroof-heading">Google's Project Sunroof: Uncovering U.S. Solar Potential through Data Querying and Visualization</h2>
             <div class="overview-section">
                 <h3>Overview</h3>
-                <p>The TAC 249 (Introduction to Data Analytics) project aimed at demonstrating familiarity with data
-                    analytics and visualization software and languages through analyzing the Google's Project Sunroof
-                    data.</p>
+                <p>The TAC 249 (Introduction to Data Analytics) project analyzed Google's Project Sunroof data to uncover regional trends in U.S. solar potential and demonstrate integration of SQL, NoSQL, and data visualization tools.</p>
                 <!-- <img id="sunroof-img" src="img/additional-projects/sunroof.jpg" alt="Project Sunroof"> -->
+                <div class="impact">
+                    <h3>Business Impact</h3>
+                    <p>
+                    The project highlights how open data can inform <strong>clean-energy investment</strong> and <strong>policy decisions</strong>.
+                    For example, the West region shows the highest solar suitability (88.68%) — an insight that could guide solar marketing and infrastructure planning.
+                    </p>
+                </div>
                 <p>Data description:</p>
                 <div class="bullets">
                     <ul>
@@ -288,45 +337,37 @@
                 <p>Tools: MySQL Workbench (SQL), MongoDB (NoSQL), Tableau.</p>
             </div>
             <div>
-                <h3>Part 1: Data Querying with MySQL</h3>
+                <h3>Approach</h3>
                 <div class="bullets">
                     <ul>
-                        <li>Imported the datasets into the database by creating two destination tables with primary keys
-                            and
-                            attributes.</li>
-                        <li>Queried the data using SQL, including joins, unions, subqueries, and functions, to explore
+                        <li>Queried the data using SQL, including joins, unions, subqueries, and functions and MongoDB Query Language (MQL) to explore
                             highest-value entries and summary statistics.</li>
+                        <li>Designed an interactive Tableau dashboard for cross-region comparisons of roof orientation and sunlight potential.</li>
                     </ul>
                 </div>
             </div>
             <div>
-                <h3>Part 2: Data Querying with MongoDB</h3>
-                <div class="bullets">
-                    <ul>
-                        <li>Exported the resulting table from joining two tables in part 1 as a JSON file and imported
-                            the
-                            file into MongoDB.</li>
-                        <li>Queried the data using MongoDB Query Language (MQL) to retrive aggregated data based on
-                            regions,
-                            states, or roof orientations.</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <h3>Part 3: Data Visualization with Tableau</h3>
+                <h3>Visualization</h3>
+                <p>Solar Panel Marketing Dashboard — interactive Tableau dashboard visualizing U.S. solar suitability, regional power generation, and orientation potential.</p>
                 <img id="sunroof-dashboard" src="img/additional-projects/sunroof-dashboard.jpg"
                     alt="Project Sunroof Dashboard">
+            </div>
+            <div>
+                <h3>Key Insight</h3>
+                <p>Western and southern U.S. states demonstrate the greatest sunlight hours and solar suitability, suggesting priority markets for solar adoption.</p>
             </div>
         </div>
 
         <div id="seoul-bike">
-            <h2 id="bike-heading">Seoul's Bike Rentals Data Visualization and Machine Learning</h2>
+            <h2 id="bike-heading">Seoul Bike Rentals Data: Predicting Demand with Machine Learning</h2>
             <!-- <img id="bike-img" src="img/additional-projects/bike-rental.jpg" alt="Bikes for Rent"> -->
             <div class="overview-section">
                 <h3>Overview</h3>
-                <p>The TAC 216 (Applied Python) final project required creating a program to manipulate and visualize a
-                    Big Data dataset, showcasing skills in scientific computing, machine learning, and data
-                    visualization.</p>
+                <p>The TAC 216 (Applied Python) final project explored how weather, seasonality, and holidays affect Seoul's bike-rental demand to support smarter resource allocation.</p>
+                <div class="impact">
+                    <h3>Business Impact</h3>
+                    <p style="color: rgb(10, 85, 142);">Findings reveal how data-driven forecasting can enhance urban mobility efficiency. For example, summer peaks in demand align with optimal staffing and maintenance schedules, while winter drop-offs suggest reallocation opportunities.</p>
+                </div>
                 <p>Data description: <em>seoul_bike_sharing.csv</em></p>
                 <div class="bullets">
                     <ul>
@@ -343,115 +384,49 @@
 
             <div>
                 <div>
-                    <h3>Data Integration and Cleaning</h3>
+                    <h3>Approach</h3>
                     <div class="bullets">
                         <ul>
-                            <li>Loaded and stored data in SQLite, ensuring unique (date-hour) records and a reproducible
-                                ETL pipeline.</li>
-                            <li>Cleaned and standardized data using Pandas.</li>
+                            <li>Built a reproducible ETL pipeline using sqlite3 and pandas.</li>
+                            <li>Created matplotlib visualizations for daily, hourly, and seasonal usage trends.</li>
+                            <li>Trained multilayer perceptron classifier and linear regression models to predict seasons based on weather features and bike demand based on time of day (hour) and weather.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div>
-                    <h3>Interactive Exploration and Visualization</h3>
-                    <div class="bullets">
-                        <ul>
-                            <li>Built a menu-driven interface that lets users select visualization options dynamically.</li>
-                            <li>Used Matplotlib to generate visualizations:</li>
-                            <ul>
-                                <li>Average hourly rentals.</li>
-                                <li>Rentals by season.</li>
-                                <li>Rentals on holidays vs. non-holidays</li>
-                                <li>Daily rental trends over the year.</li>
-                            </ul>
-                        </ul>
+                    <h3>Visualizations</h3>
+                    <div id="graphs">
                         <img class="visual" src="img/additional-projects/avg-hourly-rentals.png" alt="Average Hourly Rentals">
-                        <img class="visual" src="img/additional-projects/avg-rentals-season.png" alt="Average Hourly Rentals by Season">
                         <img class="visual" src="img/additional-projects/avg-rentals-holiday.png" alt="Average Hourly Rentals by Whether It's a Holiday">
-                        <img class="visual" src="img/additional-projects/daily-rentals.png" alt="Daily rental trends over the year">
-
+                        <img class="visual" src="img/additional-projects/avg-rentals-season.png" alt="Average Hourly Rentals by Season">
+                        <img class="visual" src="img/additional-projects/daily-rentals.png" alt="Daily Rental Trends Over The Year">
+                        <img class="visual" src="img/additional-projects/conf-matrix.png" alt="Seoul Seasons MLP Confusion Matrix">
+                        <img class="visual" src="img/additional-projects/linear-regression.png" alt="Linear Regression Plot">
                     </div>
                 </div>
 
                 <div>
-                    <h3>Predictive Modeling</h3>
+                    <h3>Key Insights</h3>
                     <div class="bullets">
                         <ul>
-                            <li>Trained an MLP classifier to predict seasons from weather data and evaluated with confusion matrix and classification report.</li>
+                            <li>Summer has the highest bike rental demand, while winter is lowest.</li>
+                            <li>The model achieved 77% classification accuracy and 50% R² in predicting rentals: performance could be improved.</li>
                         </ul>
                     </div>
-                    <img class="visual" src="img/additional-projects/conf-matrix.png">
-                    <table style="text-align: center; margin: auto;">
-                        <caption>Classification Report</caption>
-                        <thead">
-                            <tr>
-                                <th scope="col" style="text-align:left;">Class</th>
-                                <th scope="col">precision</th>
-                                <th scope="col">recall</th>
-                                <th scope="col">f1-score</th>
-                                <th scope="col">support</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row" style="text-align:left;">Autumn</th>
-                                <td>0.65</td>
-                                <td>0.53</td>
-                                <td>0.59</td>
-                                <td>485</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="text-align:left;">Spring</th>
-                                <td>0.70</td>
-                                <td>0.65</td>
-                                <td>0.67</td>
-                                <td>540</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="text-align:left;">Summer</th>
-                                <td>0.81</td>
-                                <td>0.89</td>
-                                <td>0.85</td>
-                                <td>552</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="text-align:left;">Winter</th>
-                                <td>0.86</td>
-                                <td>0.97</td>
-                                <td>0.91</td>
-                                <td>540</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="text-align:left;">accuracy</th>
-                                <td></td>
-                                <td></td>
-                                <td>0.77</td>
-                                <td>2117</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="text-align:left;">macro avg</th>
-                                <td>0.75</td>
-                                <td>0.76</td>
-                                <td>0.76</td>
-                                <td>2117</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="text-align:left;">weighted avg</th>
-                                <td>0.76</td>
-                                <td>0.77</td>
-                                <td>0.76</td>
-                                <td>2117</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="bullets">
-                        <ul>
-                            <li>Built a linear regression model to predict rental counts from time and weather and analyzed via R² and actual versus predicted plots.</li>
-                        </ul>
-                    </div>
-                    <img class="visual" src="img/additional-projects/linear-regression.png">
                 </div>
+
+                <div>
+                    <h3>Critique and Recommendations</h3>
+                    <div class="bullets">
+                        <ul>
+                            <li>Bike rental demand is influenced by many external factors, such as traffic, infrastructure, income, age, and day of the week, which are not captured in this dataset.</li> 
+                            <li>Linear regression met course requirements but failed to model complex rental patterns, suggesting that nonlinear methods could improve accuracy.</li> 
+                            <li>Future work should add weekday data (.weekday()), test nonlinear regressions, and include broader socioeconomic variables for better prediction.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
             <div id="footer">
                 <p>Thank you for visiting.</p>
