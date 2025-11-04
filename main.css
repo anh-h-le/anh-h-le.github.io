@@ -80,6 +80,28 @@ h2 {
     color: #0a66c2;
 }
 
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1em;
+    /* transform: rotate(90deg); */
+    font-family: Google Sans Code;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+
 @media (max-width: 1100px) {
     #main-buttons {
         gap: 80px;
@@ -115,5 +137,9 @@ h2 {
 
     #footer {
         font-size: 0.8em;
+    }
+
+    #myBtn {
+    font-size: 0.8em;
     }
 }
